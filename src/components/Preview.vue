@@ -1,10 +1,14 @@
 <template>
   <div class="wrapper">
     <h1>Preview</h1>
-    <p class="desc" v-bind:style="headlineIconColor">Headline Icon Color</p>
+    <p v-bind:style="headlineIconColor">Headline Icon Color</p>
     {{ headlineIconColor }}
-    <p class="desc" v-bind:style="headlineFontColor">Headline Font Color</p>
+
+    <p v-bind:style="headlineFontColor">Headline Font Color</p>
     {{ headlineFontColor }}
+    
+    <p>Body Font Family</p>
+    {{ bodyFontFamily }}
   </div>
 </template>
 
@@ -17,7 +21,7 @@ export default {
       storeState: this.$store.state,
     };
   },
-  computed: { ...mapGetters(["headlineFontColor", "headlineIconColor"]) },
+  computed: { ...mapGetters(["headlineFontColor", "headlineIconColor", "bodyFontFamily"]) },
 };
 </script>
 

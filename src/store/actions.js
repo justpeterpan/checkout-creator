@@ -6,22 +6,34 @@ export const setHeadlineIconColor = ({ commit }, color) => {
   commit("setHeadlineIconColor", color);
 };
 
-export const setBodyFontFamily = () => {}
+export const setBodyFontFamily = ({ commit }, fontFamily) => {
+  commit("setBodyFontFamily", fontFamily);
+};
 
-export const setBodyBackgroundColor = () => {}
+export const setBodyBackgroundColor = ({ commit }, color) => {
+  commit("setBodyBackgroundColor", color);
+};
 
-export const setBodyFontColor = () => {}
+export const setBodyFontColor = ({ commit }, color) => {
+  commit("setBodyFontColor", color);
+};
 
-export const setTextMutedFontColor = () => {}
+export const setTextMutedFontColor = ({ commit }, color) => {
+  commit("setTextMutedFontColor", color);
+};
 
-export const setSuprButtonPrimaryFontColor = () => {}
+export const setSuprButtonPrimaryFontColor = ({ commit }, color) => {
+  commit("setSuprButtonPrimaryFontColor", color);
+};
 
-export const setSuprButtonSecondaryFontColor = () => {}
+export const setSuprButtonSecondaryFontColor = ({ commit }, color) => {
+  commit("setSuprButtonSecondaryFontColor", color);
+};
 
 export const fetchDataFromApi = ({ commit }) => {
   fetch("https://checkout-creator.firebaseio.com/data.json")
-    .then(res => res.json())
-    .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
       const config = [];
       if (data) {
         for (let key in data) {

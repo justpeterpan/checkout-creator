@@ -5,6 +5,7 @@ export const headlineIconColorValue = state => state.config['icon'].color;
 
 export const bodyFontFamily = state => state.config.body["font-family"]
 export const bodyFontBackgroundColor = state => state.config.body["background-color"]
+export const bodyFontWeight = state => state.config.body["font-weight"]
 export const bodyFontColor = state => state.config.body.color
 
 export const textMutedFontColor = state => state.config["text--muted"].color

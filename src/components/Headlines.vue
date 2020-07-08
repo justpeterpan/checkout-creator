@@ -1,6 +1,8 @@
 <template>
   <div>
     <h2>Headlines</h2>
+
+    <!-- ICON COLOR -->
     <div class="input-group">
       <input
         type="color"
@@ -10,6 +12,8 @@
       />
       <label for="icon-color">Icon Color</label>
     </div>
+
+    <!-- FONT COLOR -->
     <div class="input-group">
       <input
         type="color"
@@ -18,6 +22,18 @@
         @change="changeHeadlineFontColor($event)"
       />
       <label for="font-color">Font Color</label>
+    </div>
+
+    <!-- FONT FAMILY  -->
+    <div class="input-group">
+      <select name="" id="font-family" @change="changeBodyFontFamily($event)">
+        <option value="IBM Plex Sans" selected>IBM Plex Sans</option>
+        <option value="Montserrat">Montserrat</option>
+        <option value="DIN Next LT Pro">DIN Next LT Pro</option>
+        <option value="Jost">Jost</option>
+        <option value="Open Sans">Open Sans</option>
+      </select>
+      <label for="font-family">font family</label>
     </div>
   </div>
 </template>
@@ -30,7 +46,11 @@ export default {
     ...mapGetters(["headlineIconColorValue", "headlineFontColorValue"]),
   },
   methods: {
-    ...mapActions(["setHeadlineFontColor", "setHeadlineIconColor"]),
+    ...mapActions([
+      "setHeadlineFontColor",
+      "setHeadlineIconColor",
+      "setBodyFontFamily",
+    ]),
     changeHeadlineFontColor(e) {
       const color = e.target.value;
       this.setHeadlineFontColor(color);
@@ -38,6 +58,11 @@ export default {
     changeHeadlineIconColor(e) {
       const color = e.target.value;
       this.setHeadlineIconColor(color);
+    },
+    changeBodyFontFamily(e) {
+      const fontFamily = e.target.value + ", sans-serif";
+      console.log(fontFamily);
+      this.setBodyFontFamily(fontFamily);
     },
   },
 };

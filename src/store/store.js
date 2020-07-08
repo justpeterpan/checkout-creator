@@ -13,6 +13,7 @@ export const store = new Vuex.Store({
       body: {
         "font-family": "'Montserrat', sans-serif",
         "background-color": "#000",
+        "font-weight": 300,
         color: "#000",
       },
       headline: {
