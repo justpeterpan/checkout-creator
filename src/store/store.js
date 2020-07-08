@@ -13,28 +13,29 @@ export const store = new Vuex.Store({
       body: {
         "font-family": "'Montserrat', sans-serif",
         "background-color": "#000",
-        "font-weight": 300,
-        color: "#000",
+        color: "#000"
       },
       headline: {
         color: "#000",
+        "font-weight": "normal",
+        "text-transform": "capitalize"
       },
       "text--muted": {
-        color: "#000",
+        color: "#000"
       },
       "supr-button--primary": {
-        color: "#000",
+        color: "#000"
       },
       "supr-button--secondary": {
-        color: "#000",
+        color: "#000"
       },
-      icon: {
-        color: "#000",
-      },
+      "icon": {
+        color: "#000"
+      }
     },
-    saveButtonText: "Save Config",
+    saveButtonText: "Save Config"
   },
   getters,
   mutations,
-  actions,
+  actions
 });

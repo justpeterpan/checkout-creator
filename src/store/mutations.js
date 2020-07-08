@@ -1,11 +1,3 @@
-export const setHeadlineFontColor = (state, color) => {
-  state.config.headline.color = color;
-};
-
-export const setHeadlineIconColor = (state, color) => {
-  state.config.icon.color = color;
-};
-
 export const setBodyFontFamily = (state, fontFamily) => {
   state.config.body["font-family"] = fontFamily;
 };
@@ -16,6 +8,21 @@ export const setBodyBackgroundColor = (state, color) => {
 
 export const setBodyFontColor = (state, color) => {
   state.config.body.color = color;
+};
+export const setHeadlineFontColor = (state, color) => {
+  state.config.headline.color = color;
+};
+
+export const setHeadlineIconColor = (state, color) => {
+  state.config.icon.color = color;
+};
+
+export const setHeadlineFontWeight = (state, fontWeight) => {
+  state.config.headline["font-weight"] = fontWeight;
+};
+
+export const setHeadlineTextTransform = (state, textTransform) => {
+  state.config.headline["text-transform"] = textTransform;
 };
 
 export const setTextMutedFontColor = (state, color) => {

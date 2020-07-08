@@ -1,11 +1,3 @@
-export const setHeadlineFontColor = ({ commit }, color) => {
-  commit("setHeadlineFontColor", color);
-};
-
-export const setHeadlineIconColor = ({ commit }, color) => {
-  commit("setHeadlineIconColor", color);
-};
-
 export const setBodyFontFamily = ({ commit }, fontFamily) => {
   commit("setBodyFontFamily", fontFamily);
 };
@@ -16,6 +8,22 @@ export const setBodyBackgroundColor = ({ commit }, color) => {
 
 export const setBodyFontColor = ({ commit }, color) => {
   commit("setBodyFontColor", color);
+};
+
+export const setHeadlineFontColor = ({ commit }, color) => {
+  commit("setHeadlineFontColor", color);
+};
+
+export const setHeadlineIconColor = ({ commit }, color) => {
+  commit("setHeadlineIconColor", color);
+};
+
+export const setHeadlineFontWeight = ({ commit }, fontWeight) => {
+  commit("setHeadlineFontWeight", fontWeight);
+};
+
+export const setHeadlineTextTransform = ({ commit }, textTransform) => {
+  commit("setHeadlineTextTransform", textTransform);
 };
 
 export const setTextMutedFontColor = ({ commit }, color) => {
