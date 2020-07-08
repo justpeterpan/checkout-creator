@@ -1,41 +1,33 @@
 <template>
   <div>
     <h1>Branding Configurator</h1>
-    <input
-      type="color"
-      id="headline"
-      :value="headlineFontColorValue"
-      @change="changeHeadlineFontColor($event)"
-    />
-    <label for="headline">Change Font Color</label>
-    <save-button text="Save Config" />
+    <headlines />
+    <save-button :text="`${saveButtonText}`" />
   </div>
 </template>
 
 <script>
-import SaveButton from "./SaveButton.vue";
+import SaveButton from "./SaveButton";
+import Headlines from "./Headlines";
+
 import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Configurator",
-  components: { SaveButton },
+  components: { SaveButton, Headlines },
   data() {
     return {
-      storeState: this.$store.state
+      storeState: this.$store.state,
     };
   },
   computed: {
-    ...mapGetters(["headlineFontColor", "headlineFontColorValue"])
+    ...mapGetters(["saveButtonText"]),
   },
   methods: {
-    ...mapActions(["setHeadlineFontColor", "fetchDataFromApi"]),
-    changeHeadlineFontColor(e) {
-      const color = e.target.value;
-      this.setHeadlineFontColor(color);
-    }
+    ...mapActions(["fetchDataFromApi"]),
   },
   created() {
-    this.fetchDataFromApi(this.databaseEntryKey);
+    this.fetchDataFromApi();
   }
 };
 </script>

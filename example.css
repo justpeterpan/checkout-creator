@@ -1,0 +1,31 @@
+body {
+  color: "#000";
+  background-color: "#000";
+  font-family: "Montserrat", sans-serif;
+}
+
+/* mapped from headline property */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: "#000";
+}
+
+.text--muted {
+  color: "#000";
+}
+
+.supr-button--primary {
+  color: "#000";
+}
+
+.supr-button--secondary {
+  color: "#000";
+}
+
+.icon {
+  color: "#000";
+}

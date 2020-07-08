@@ -1,7 +1,9 @@
 <template>
   <div class="wrapper">
     <h1>Preview</h1>
-    <p class="desc" v-bind:style="headlineFontColor">Hello</p>
+    <p class="desc" v-bind:style="headlineIconColor">Headline Icon Color</p>
+    {{ headlineIconColor }}
+    <p class="desc" v-bind:style="headlineFontColor">Headline Font Color</p>
     {{ headlineFontColor }}
   </div>
 </template>
@@ -12,10 +14,10 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      storeState: this.$store.state
+      storeState: this.$store.state,
     };
   },
-  computed: { ...mapGetters(["headlineFontColor"]) }
+  computed: { ...mapGetters(["headlineFontColor", "headlineIconColor"]) },
 };
 </script>
 

@@ -22,6 +22,8 @@ export default {
   computed: { ...mapGetters({ state: "state" }) },
   methods: {
     submitConfig() {
+      console.log(this.config);
+      
       this.$http
         .post("https://checkout-creator.firebaseio.com/data.json", this.config)
         .then(res => console.log(res));
