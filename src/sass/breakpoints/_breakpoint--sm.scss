@@ -1,0 +1,46 @@
+// BREAKPOINT SM
+// 576px – 767px
+
+.hidden-for-sm {
+    display: none !important;
+}
+
+@media (min-width: $breakpoint-sm) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0 0 var(--base-gutter-size) 0;
+        padding: 0;
+    }
+
+    .headline--xl {
+        font-size: calc(var(--base-font-size) * 1.75);
+    }
+
+    .headline--lg {
+        font-size: calc(var(--base-font-size) * 1.5);
+    }
+
+    .headline--md {
+        font-size: calc(var(--base-font-size) * 1.25);
+    }
+
+    .headline--sm {
+        font-size: var(--base-font-size);
+    }
+
+    .headline--xs {
+        font-size: var(--base-font-size);
+    }
+
+    p.small {
+        font-size: calc(var(--base-font-size) * 0.8333333);
+    }
+
+    p.fine-print {
+        font-size: calc(var(--base-font-size) * 0.8333333);
+    }
+}

@@ -1,0 +1,15 @@
+// BREAKPOINTS
+
+// 0 – 575px is covered by mobile first
+
+// 576px – 767px
+@import '_breakpoint--sm';
+
+// 768px – 991px
+@import '_breakpoint--md';
+
+// 992px – 1199px
+@import '_breakpoint--lg';
+
+// 1200px – ∞
+@import '_breakpoint--xl';

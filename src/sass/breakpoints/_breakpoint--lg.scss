@@ -1,0 +1,24 @@
+// BREAKPOINT LG
+// Desktop
+// 992px – 1199px
+
+.hidden-for-lg {
+    display: none !important;
+}
+
+@media (min-width: $breakpoint-lg) {
+    :root {
+        --base-gutter-size: #{$base-unit--xl};
+    }
+
+    #app {
+        --base-font-size: 12px;
+        --base-gutter-size: 32px;
+
+        grid-template-columns: 4fr 3fr;
+    }
+
+    .hidden-for-lg {
+        display: none !important;
+    }
+}

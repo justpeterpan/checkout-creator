@@ -1,0 +1,102 @@
+/*
+  * BUTTONS
+*/
+
+.supr-btn {
+    color: $white !important;
+    font-family: inherit !important;
+    font-size: $base-font-size--sm !important;
+    font-weight: $button-font-weight !important;
+    letter-spacing: $button-letter-spacing;
+    text-transform: $button-text-transform !important;
+    border-radius: $button-border-radius !important;
+    transition: $base-transition;
+    text-align: center;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+
+    &--lg {
+        padding: $base-unit--sm $base-unit--xl;
+        height: $button-size--lg;
+        font-size: $base-font-size--sm * 1.3333333333 !important;
+    }
+
+    &--md {
+        padding: $base-unit--xs $base-unit--lg;
+        height: $button-size--md;
+    }
+
+    &--sm {
+        padding: $base-unit--xxs $base-unit--md;
+        height: $button-size--sm;
+        font-size: $base-font-size--sm * 0.75 !important;
+        font-weight: $base-font-weight--regular !important;
+    }
+
+    &--xs {
+        padding: $base-unit--xxs $base-unit--sm;
+        height: $button-size--xs;
+        font-size: $base-font-size--sm * 0.75 !important;
+        font-weight: $base-font-weight--regular !important;
+    }
+
+    &--square {
+        padding: $base-unit--xxs;
+        height: $button-size--xs;
+        width: $button-size--xs;
+    }
+
+    &--round {
+        padding: $base-unit--xxs;
+        height: $button-size--xs;
+        width: $button-size--xs;
+        border-radius: 100px !important;
+    }
+
+    &--brand {
+        @include all-button-pseudos($button-color--brand, $button-brand-gradient, $button--gradient-direction);
+    }
+
+    &--primary {
+        @include all-button-pseudos($button-color--primary, $button-primary-gradient, $button--gradient-direction);
+    }
+
+    &--secondary {
+        @include all-button-pseudos($button-color--secondary, $button-secondary-gradient, $button--gradient-direction);
+    }
+
+    &--success {
+        @include all-button-pseudos($success-color, none, none);
+    }
+
+    &--warning {
+        @include all-button-pseudos($warning-color, none, none);
+    }
+
+    &--danger {
+        @include all-button-pseudos($danger-color, none, none);
+    }
+
+    &--info {
+        @include all-button-pseudos($info-color, none, none);
+    }
+
+    &--block {
+        width: 100%;
+    }
+
+    &--edit {
+        @include all-outline-button-pseudos($button-color--edit);
+    }
+
+    &--remove {
+        @include all-outline-button-pseudos($button-color--remove);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed !important;
+    }
+}

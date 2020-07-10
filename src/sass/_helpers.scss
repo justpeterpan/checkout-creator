@@ -1,0 +1,63 @@
+// HELPER CLASSES
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+}
+
+.hidden-for-desktop {
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+// Text align
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+// Padding
+@each $size, $unit in (xxl, $base-unit--xxl), (xl, $base-unit--xl), (lg, $base-unit--lg), (md, $base-unit--md), (sm, $base-unit--sm),
+    (xs, $base-unit--xs), (xxs, $base-unit--xxs), (none, 0)
+{
+    .padding--#{$size} {
+        padding: $unit;
+    }
+}
+
+// Padding-bottom
+@each $size, $unit in (xxl, $base-unit--xxl), (xl, $base-unit--xl), (lg, $base-unit--lg), (md, $base-unit--md), (sm, $base-unit--sm),
+    (xs, $base-unit--xs), (xxs, $base-unit--xxs), (none, 0)
+{
+    .padding-bottom--#{$size} {
+        padding: 0 0 $unit 0;
+    }
+}
+
+// Margin
+@each $size, $unit in (xxl, $base-unit--xxl), (xl, $base-unit--xl), (lg, $base-unit--lg), (md, $base-unit--md), (sm, $base-unit--sm),
+    (xs, $base-unit--xs), (xxs, $base-unit--xxs), (none, 0)
+{
+    .margin--#{$size} {
+        margin: $unit;
+    }
+}
+
+// Margin-bottom
+@each $size, $unit in (xxl, $base-unit--xxl), (xl, $base-unit--xl), (lg, $base-unit--lg), (md, $base-unit--md), (sm, $base-unit--sm),
+    (xs, $base-unit--xs), (xxs, $base-unit--xxs), (none, 0)
+{
+    .margin-bottom--#{$size} {
+        margin: 0 0 $unit 0;
+    }
+}

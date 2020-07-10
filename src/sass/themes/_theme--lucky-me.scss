@@ -1,0 +1,90 @@
+// UNITS
+$base-unit: 16px;
+
+$base-unit--xxxs: $base-unit * 0.125; //  2
+$base-unit--xxs: $base-unit * 0.25; //  4
+$base-unit--xs: $base-unit * 0.5; //  8
+$base-unit--sm: $base-unit * 0.75; // 12
+$base-unit--md: $base-unit; // 16
+$base-unit--lg: $base-unit * 1.5; // 24
+$base-unit--xl: $base-unit * 2; // 32
+$base-unit--xxl: $base-unit * 3; // 48
+$base-unit--xxxl: $base-unit * 4; // 64
+
+// COLORS ----------------------------------------------------------------------
+
+$black: #000000;
+$grey--8: lighten($black, 8%);
+$grey--16: lighten($black, 16%);
+$grey--24: lighten($black, 24%);
+$grey--32: lighten($black, 32%);
+$grey--40: lighten($black, 40%);
+$grey--48: lighten($black, 48%);
+$grey--56: lighten($black, 56%);
+$grey--64: lighten($black, 64%);
+$grey--72: lighten($black, 72%);
+$grey--80: lighten($black, 80%);
+$grey--88: lighten($black, 88%);
+$grey--96: lighten($black, 96%);
+$white: #ffffff;
+
+$brand-color: #a88492;
+$action-color: #a88492;
+$text-color: #515151;
+$headline-color: #7a7a7a;
+$background-color: $white;
+$text-color--muted: #9c9c9c;
+$success-color: #82c91e;
+$info-color: #bac8ff;
+$warning-color: #fab005;
+$danger-color: #aa0000;
+$link-color: #a88492;
+
+// SECTIONS
+$header-background-color: #fff;
+$body-background-color: $white;
+$panel-background-color: #f2edef;
+
+// TYPOGRAPHY -----------------------------------------------------------------
+
+// Fallback Fonts
+$ff-fallback: -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Oxygen”, “Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”,
+    “Helvetica Neue”, sans-serif;
+
+// Font Faces
+$base-font-family: 'Open Sans';
+
+// Base Typo
+$base-font-size: $base-unit;
+$base-line-height: 1.5;
+$base-font-weight--thin: 100;
+$base-font-weight--regular: 300;
+$base-font-weight--medium: 500;
+$base-font-weight--bold: 700;
+$base-font-weight--black: 900;
+
+// Small Typo
+$base-font-size--sm: $base-font-size * 0.75;
+
+// Headlines
+$base-headline-font-family: 'Shadows Into Light Two';
+$base-headline-font-weight: normal;
+$base-headline-case: uppercase;
+$base-headline-spacing: 0.12em;
+
+// UI VARIABLES ----------------------------------------------------------------
+
+$base-border-radius: 0;
+$base-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+$base-input-size: 40px;
+$button-size--lg: 64px;
+$button-size--md: 40px;
+$button-size--sm: 24px;
+$base-transition: all 0.3s ease-in-out;
+
+// Breakpoints -------------------------------------------------------------
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;

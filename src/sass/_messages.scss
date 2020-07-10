@@ -1,0 +1,51 @@
+// MESSAGES
+
+.message {
+    width: 100%;
+    padding: var(--base-gutter-size);
+    border-radius: var(--base-border-radius);
+}
+
+.message-sm {
+    font-size: 10px;
+    padding: calc(var(--base-gutter-size) * 0.25);
+    text-align: center;
+}
+
+.message--error {
+    background-color: rgba($danger-color, 0.25);
+    color: var(--danger-color);
+    box-shadow: inset 0 0 0 1px var(--danger-color);
+    margin-bottom: calc(var(--base-gutter-size) * 0.5);
+    font-weight: 500;
+}
+
+.message--error small:before {
+    content: '⚠ ';
+    font-weight: 500;
+}
+
+.message--warning {
+    background-color: rgba($warning-color, 0.25);
+    color: var(--warning-color);
+    box-shadow: inset 0 0 0 1px var(--warning-color);
+    margin-bottom: calc(var(--base-gutter-size) * 0.5);
+}
+
+.message--success {
+    background-color: rgba($success-color, 0.25);
+    color: var(--success-color);
+    box-shadow: inset 0 0 0 1px var(--success-color);
+}
+
+.message--info {
+    background-color: rgba($info-color, 0.25);
+    color: var(--info-color);
+    box-shadow: inset 0 0 0 1px var(--info-color);
+}
+
+.message--default {
+    background-color: rgba($panel-background-color, 0.25);
+    color: $panel-background-color;
+    box-shadow: inset 0 0 0 1px $panel-background-color;
+}

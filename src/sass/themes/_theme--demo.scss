@@ -1,0 +1,173 @@
+// UNITS
+$base-unit: 16px;
+
+$base-unit--xxxs: $base-unit * 0.125; //  2
+$base-unit--xxs: $base-unit * 0.25; //  4
+$base-unit--xs: $base-unit * 0.5; //  8
+$base-unit--sm: $base-unit * 0.75; // 12
+$base-unit--md: $base-unit; // 16
+$base-unit--lg: $base-unit * 1.5; // 24
+$base-unit--xl: $base-unit * 2; // 32
+$base-unit--xxl: $base-unit * 3; // 48
+$base-unit--xxxl: $base-unit * 4; // 64
+
+// COLORS
+
+// Greyscale
+$black: #000000;
+$grey--08: lighten($black, 8%);
+$grey--16: lighten($black, 16%);
+$grey--24: lighten($black, 24%);
+$grey--32: lighten($black, 32%);
+$grey--40: lighten($black, 40%);
+$grey--48: lighten($black, 48%);
+$grey--56: lighten($black, 56%);
+$grey--64: lighten($black, 64%);
+$grey--72: lighten($black, 72%);
+$grey--80: lighten($black, 80%);
+$grey--88: lighten($black, 88%);
+$grey--96: lighten($black, 96%);
+$white: #ffffff;
+
+// Custom colors
+$brand-color: #1a1a1e;
+$action-color: #2983fb;
+$action-color-2: darken(#00ffc8, 3%);
+$text-color: #383840;
+$headline-color: #002846;
+$background-color: #d0d3d4;
+$text-color--muted: #d0d3d4;
+$success-color: darken(#00ffc8, 3%);
+$info-color: #8ee6ff;
+$warning-color: #ff7373;
+$danger-color: #dc3545;
+
+$link-color: $action-color;
+
+// TYPOGRAPHY
+
+// Fallback Fonts
+$ff-fallback: -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Oxygen”, “Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”,
+    “Helvetica Neue”, sans-serif;
+
+// Font Faces
+$base-font-family: 'DIN Next LT Pro';
+
+// Base Typo
+$base-font-size: $base-unit;
+$base-line-height: 1.5;
+$base-font-family: $base-font-family;
+$base-font-weight--thin: 300;
+$base-font-weight--regular: normal;
+$base-font-weight--medium: 500;
+$base-font-weight--bold: bold;
+$base-font-weight--black: 900;
+
+// Small Typo
+$base-font-size--sm: $base-font-size * 0.75;
+
+// Headlines
+$base-headline-font-size: $base-unit * 1.125;
+$base-headline-font-family: 'DIN Next LT Pro';
+$base-headline-font-weight: bold;
+$base-headline-case: capitalize;
+$base-headline-spacing: 0;
+
+// UI VARIABLES
+$base-border-radius: $base-unit--xxs;
+$base-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+$base-input-size: 40px;
+$base-transition: all 0.3s ease-in-out;
+$body-background-color: $grey--96;
+$panel-background-color: rgba(0, 0, 0, 0.025);
+
+// Forms
+
+// labels
+$label-text-transform: uppercase;
+$label-color: $text-color--muted;
+$label-color--focus: $action-color;
+$label-color--valid: $success-color;
+$label-color--invalid: $danger-color;
+
+// inputs
+$input-color: $text-color;
+$input-color--focus: $action-color;
+$input-color--valid: $success-color;
+$input-color--invalid: $danger-color;
+
+// Buttons
+// colors
+$button-color--brand: $brand-color;
+// set to none if not needed
+$button-brand-gradient: #1353b9;
+
+$button-color--primary: $action-color;
+// set to none if not needed
+$button-primary-gradient: #1353b9;
+
+$button-color--secondary: $action-color-2;
+// set to none if not needed
+$button-secondary-gradient: darken($action-color-2, 10%);
+
+$button-color--edit: $text-color--muted;
+$button-color--remove: $danger-color;
+//sizes
+$button-size--lg: $base-unit--xxxl;
+$button-size--md: $base-unit--xxl;
+$button-size--sm: $base-unit--xl;
+$button-size--xs: $base-unit--lg;
+$button-border-radius: 100px;
+$button-text-transform: capitalize;
+$button-font-weight: $base-font-weight--bold;
+$button-letter-spacing: 0;
+$button--gradient-direction: 190deg;
+
+// Header
+$header-background-color: $white;
+// set to none if not needed
+$header-background-image: none;
+$header-box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05);
+// aligns header logo to left | center | right
+$header-align: center;
+
+// Steps
+// background
+$step-background-color: linear-gradient(180deg, $grey--96, $white);
+$step-box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.025);
+$step-border-radius: 16px;
+
+// count
+$step-count-height: $base-headline-font-size * 2;
+$step-count-width: $base-headline-font-size * 2;
+$step-count-background-color: $white;
+$step-count-background-image: none;
+$step-count-number-color: $brand-color;
+// set to none if not needed
+$step-count-shadow: inset 0 0 0 3px $brand-color;
+// active
+$step-count-number-color--active: $white;
+$step-count-shadow--active: inset 0 0 0 3px $brand-color;
+$step-count-background-color--active: $brand-color;
+// valid
+$step-count-background-color--valid: $action-color-2;
+$step-count-shadow--valid: inset 0 0 0 3px $action-color-2;
+$step-count-number-color--valid: $white;
+
+// set to 100px for circle shape set to 0 for square
+$step-count-border-radius: $base-headline-font-size / 2;
+// rotation only necessary for diamond shape set both to 0 if not needed
+$step-count-rotate: 0;
+$step-count-number-rotate: 0;
+
+// Cart review
+$cart-background-color: $grey--96;
+$cart-box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.1);
+$cart-border-radius: 16px;
+
+// BREAKPOINTS
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;

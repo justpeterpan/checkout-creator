@@ -1,0 +1,19 @@
+// BREAKPOINT XL
+// Large desktop
+// 1200px – ∞
+
+.hidden-for-xl {
+    display: none !important;
+}
+
+@media (min-width: 1200px) {
+    /* autoprefixer grid: autoplace / / autoprefixer grid: on */
+
+    #app {
+        grid-template-columns: 4fr 3fr;
+    }
+
+    .hidden-for-xl {
+        display: none !important;
+    }
+}

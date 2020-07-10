@@ -1,0 +1,36 @@
+// CSS VARS
+
+:root {
+    --vh: 1vh;
+    --scroll-position: 0;
+    --base-font-size: #{$base-unit--sm};
+    --base-font-size--small: calc(var(--base-font-size) * 0.83333333);
+    --base-gutter-size: #{$base-unit--lg};
+    --header-background-color: #{$header-background-color};
+    --header-background-image: #{$header-background-image};
+    --header-box-shadow: #{$header-box-shadow};
+    --header-align: #{$header-align};
+    --base-font-family: #{$base-font-family}, #{$ff-fallback};
+    --base-font-weight: #{$base-font-weight--regular};
+    --headline-font: #{$base-headline-font-family, #{$ff-fallback}};
+    --headline-color: #{$headline-color};
+    --headline-weight: #{$base-font-weight--bold};
+    --headline-case: #{$base-headline-case};
+    --headline-spacing: #{$base-headline-spacing};
+    --brand-color: #{$brand-color};
+    --action-color: #{$action-color};
+    --text-color: #{$text-color};
+    --background-color: #{$body-background-color};
+    --panel-background-color: #{$panel-background-color};
+    --text-color--muted: #{$text-color--muted};
+    --success-color: #{$success-color};
+    --info-color: #{$info-color};
+    --warning-color: #{$warning-color};
+    --danger-color: #{$danger-color};
+    --base-border-radius: #{$base-border-radius};
+    --base-transition: #{$base-transition};
+    --cart-review-sticky-position: #{$base-unit--lg};
+    --cart-background-color: #{$cart-background-color};
+    --cart-box-shadow: #{$cart-box-shadow};
+    --cart-border-radius: #{$cart-border-radius};
+}

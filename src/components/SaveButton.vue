@@ -1,6 +1,9 @@
 <template>
   <div>
-    <button @click="submitConfig">{{ text }}</button>
+    <button
+      class="supr-btn supr-button--primary supr-btn--md supr-btn--block"
+      @click="submitConfig"
+    >{{ text }}</button>
   </div>
 </template>
 
@@ -12,7 +15,7 @@ export default {
   props: ["text"],
   data() {
     return {
-      config: {},
+      config: {}
     };
   },
   mounted() {
@@ -28,16 +31,16 @@ export default {
       fetch("http://localhost:4000/", {
         method: "POST",
         headers: {
-          "Content-Type": "plain/text",
+          "Content-Type": "plain/text"
         },
-        body: cssFile,
+        body: cssFile
       });
 
       // this.$http
       //   .post("https://checkout-creator.firebaseio.com/data.json", this.config)
       //   .then((res) => console.log(res));
-    },
-  },
+    }
+  }
 };
 </script>
 

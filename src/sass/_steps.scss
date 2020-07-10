@@ -1,0 +1,184 @@
+// STEPS
+
+/* autoprefixer grid: autoplace / / autoprefixer grid: on */
+
+.steps {
+    grid-area: steps;
+    grid-template-areas: 'shipping-address' 'billing-address' 'shipping-method' 'payment-method';
+    grid-column-start: 1;
+    counter-reset: section;
+}
+
+.step-container {
+    display: block;
+}
+
+.step-container + .step-container {
+    margin: var(--base-gutter-size) 0 0 0;
+}
+
+.step {
+    box-shadow: $step-box-shadow;
+    background: $step-background-color;
+    border-radius: $step-border-radius;
+}
+
+// Header
+.step__header {
+    padding: var(--base-gutter-size);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.step__header h2 {
+    margin: 0 !important;
+    font-size: $base-font-size--sm * 1.33333333 !important;
+}
+
+.step__count {
+    background-color: $step-count-background-color;
+    background-image: $step-count-background-image;
+    box-shadow: $step-count-shadow;
+    height: $step-count-height;
+    width: $step-count-width;
+    transform: $step-count-rotate;
+    transition: $base-transition;
+    border-radius: $step-count-border-radius;
+    margin-right: $base-headline-font-size / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step--active .step__count {
+    background-color: $step-count-background-color--active;
+    box-shadow: $step-count-shadow--active;
+}
+
+.step--valid .step__count {
+    background-color: $step-count-background-color--valid;
+    box-shadow: $step-count-shadow--valid;
+}
+
+.step__count-nr {
+    // counter-increment     : section;
+    // content               : counter(section);
+    color: $step-count-number-color;
+    font-family: $base-headline-font-family;
+    font-weight: $base-headline-font-weight;
+    font-size: $base-headline-font-size;
+    transform: $step-count-number-rotate;
+    font-feature-settings: 'tnum';
+}
+
+.step--active .step__count-nr {
+    color: $step-count-number-color--active;
+}
+
+.step--valid .step__count-nr {
+    display: none;
+    color: $step-count-number-color--valid;
+}
+
+.step .step__count-check {
+    display: none;
+}
+
+.step--valid .step__count-check {
+    display: flex;
+    transform: $step-count-number-rotate;
+
+    svg {
+        stroke: $step-count-number-color--valid;
+    }
+}
+
+.step__header h2 svg {
+    height: $base-headline-font-size * 1.5;
+    width: $base-headline-font-size * 1.5;
+    display: none;
+    transition: $base-transition;
+}
+
+.step--valid .step__header h2 svg {
+    // display   : block;
+    position: absolute;
+    top: 1px;
+    left: -1px;
+    animation: slide-in-left 0.3s both ease-out;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+// Main
+.step-container .step__main {
+    display: grid;
+    grid-gap: 0 var(--base-gutter-size);
+    overflow: hidden;
+    max-height: 0;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+}
+
+.step-container.open .step__main {
+    max-height: 1000px;
+    transform: scaleY(1);
+    transition: max-height 0.3s ease-in, transform 0.3s ease-out;
+}
+
+.step-container.open .content-box {
+    padding: 0 var(--base-gutter-size) var(--base-gutter-size);
+    opacity: 1;
+    transition: opacity 0.3s 0.3s ease-out;
+}
+
+.step-container.close .content-box {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+// Valid
+.step-container .step--valid .step__main {
+    max-height: fit-content;
+    transform: scaleY(1);
+    transition: max-height 0.3s ease-in, transform 0.3s ease-out;
+    padding: 0 var(--base-gutter-size) var(--base-gutter-size);
+}
+
+.step-container .step--valid .content-box {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+// Locked
+.step-container .step--locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.step-container .step--locked .step__main {
+    max-height: 0;
+    transform: scaleY(0);
+    transition: max-height 0.3s ease-out, transform 0.3s ease-in;
+}
+
+.step-container .step--locked .content-box {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+// Summary
+.step__summary {
+    display: flex;
+    justify-content: space-between;
+}
