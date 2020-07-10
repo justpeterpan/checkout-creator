@@ -8,7 +8,7 @@ app.use(cors());
 
 app.post("/", function(req, res) {
   let body = "";
-  filePath = __dirname + "/data.css";
+  filePath = __dirname + "/styles.css";
 
   req.on("data", (data) => {
     body += data;
