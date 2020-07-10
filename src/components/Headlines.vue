@@ -61,7 +61,6 @@ export default {
     },
     changeBodyFontFamily(e) {
       const fontFamily = e.target.value + ", sans-serif";
-      console.log(fontFamily);
       this.setBodyFontFamily(fontFamily);
     },
   },
