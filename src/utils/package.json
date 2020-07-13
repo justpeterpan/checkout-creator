@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "write-css.js",
+  "scripts": {
+    "start": "nodemon ./write-css.js",
+    "dev": "nodemon ./write-css.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.5.14",
+    "nodemon": "^2.0.4",
+    "validator": "^11.0.0"
+  }
+}

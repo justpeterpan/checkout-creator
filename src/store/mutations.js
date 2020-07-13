@@ -13,8 +13,8 @@ export const setHeadlineFontColor = (state, color) => {
   state.config.headline.color = color;
 };
 
-export const setHeadlineIconColor = (state, color) => {
-  state.config.icon.color = color;
+export const setHeadlineIconColor = (state, fill) => {
+  state.config.icon.fill = fill;
 };
 
 export const setHeadlineFontWeight = (state, fontWeight) => {

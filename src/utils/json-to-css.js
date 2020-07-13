@@ -1,5 +1,3 @@
-const exampleJson = require("../../example.json");
-
 const finalCssArray = [];
 
 const mapBodyProperties = (selector, values) => {
@@ -65,5 +63,3 @@ export const convertJsonToCss = (jsonObject) => {
   }
   return finalCssArray.join("");
 };
-
-convertJsonToCss(exampleJson.config);

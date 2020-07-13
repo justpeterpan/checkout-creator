@@ -14,8 +14,8 @@ export const setHeadlineFontColor = ({ commit }, color) => {
   commit("setHeadlineFontColor", color);
 };
 
-export const setHeadlineIconColor = ({ commit }, color) => {
-  commit("setHeadlineIconColor", color);
+export const setHeadlineIconColor = ({ commit }, fill) => {
+  commit("setHeadlineIconColor", fill);
 };
 
 export const setHeadlineFontWeight = ({ commit }, fontWeight) => {
