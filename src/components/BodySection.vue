@@ -17,6 +17,26 @@
                     <option value="Jost">Jost</option>
                     <option value="Open Sans">Open Sans</option>
                 </select>
+                <span class="select-indicator">
+                    <svg
+                        width="10"
+                        height="10"
+                        version="1.1"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g transform="scale(0.833333)">
+                            <path
+                                fill="none"
+                                stroke="#000"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1"
+                                d="M0.541,5.627l11.125,12.573l-2.2212e-08,-2.51095e-08c0.182964,0.206831 0.498954,0.226179 0.705785,0.043215c0.0152727,-0.0135103 0.0297047,-0.0279423 0.043215,-0.043215l11.126,-12.573"
+                            ></path>
+                        </g>
+                    </svg>
+                </span>
                 <label for="font-family">font family</label>
             </div>
 
