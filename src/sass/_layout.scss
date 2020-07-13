@@ -2,41 +2,6 @@
 
 // PAGE LAYOUT
 
-/* autoprefixer grid: autoplace */
+@import "_steps";
 
-// Grid areas
-app-shipping-address {
-    grid-area: shipping-address;
-}
-
-app-billing-address {
-    grid-area: billing-address;
-}
-
-app-shipping-methods {
-    grid-area: shipping-methods;
-}
-
-app-payment-methods {
-    grid-area: payment-methods;
-}
-
-app-login {
-    grid-area: login;
-}
-
-app-cart-review {
-    grid-area: cart-review;
-}
-
-.create-account-panel {
-    grid-area: create-account;
-}
-
-.buy-button {
-    grid-area: buy-button;
-}
-
-@import '_steps';
-
-@import '_lists';
+@import "_lists";

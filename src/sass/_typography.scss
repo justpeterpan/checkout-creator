@@ -8,14 +8,14 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $base-headline-font-family, $ff-fallback !important;
-    font-weight: $base-headline-font-weight !important;
-    color: $headline-color !important;
-    text-transform: $base-headline-case !important;
-    letter-spacing: $base-headline-spacing !important;
-    margin: 0 0 var(--base-gutter-size) 0 !important;
-    padding: 0 !important;
-    border: none !important;
+    font-family: $base-headline-font-family, $ff-fallback;
+    font-weight: $base-headline-font-weight;
+    color: $headline-color;
+    text-transform: $base-headline-case;
+    letter-spacing: $base-headline-spacing;
+    margin: 0 0 1em 0;
+    padding: 0;
+    border: none;
 }
 
 .headline--xl {
@@ -41,12 +41,12 @@ h6 {
 a,
 button,
 select,
-[role='button'],
+[role="button"],
 .input-group--hidden,
 .checkbox-label,
 .radio-label,
 .content-box--selectable .content-box__header {
-    cursor: pointer !important;
+    cursor: pointer;
 }
 
 a {

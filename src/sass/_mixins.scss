@@ -5,49 +5,61 @@
     text-decoration-skip-ink: auto;
 
     &:link {
-        color: $link-color !important;
+        color: $link-color;
     }
     &:visited {
-        color: lighten($link-color, 8%) !important;
+        color: lighten($link-color, 8%);
     }
     &:hover {
-        color: darken($link-color, 8%) !important;
+        color: darken($link-color, 8%);
     }
     &:active {
-        color: $link-color !important;
+        color: $link-color;
     }
 }
 
 // Buttons
 @mixin all-button-pseudos($color, $gradient, $button--gradient-direction) {
-    background-color: $color !important;
-    background-image: linear-gradient($button--gradient-direction, $color, $gradient) !important;
-    color: $white !important;
+    background-color: $color;
+    background-image: linear-gradient(
+        $button--gradient-direction,
+        $color,
+        $gradient
+    );
+    color: $white;
 
     &:focus,
     &:hover {
-        background-color: darken($color, 4%) !important;
-        background-image: linear-gradient($button--gradient-direction, $gradient, $color) !important;
+        background-color: darken($color, 4%);
+        background-image: linear-gradient(
+            $button--gradient-direction,
+            $gradient,
+            $color
+        );
     }
     &:active {
-        background-color: darken($color, 8%) !important;
-        background-image: linear-gradient($button--gradient-direction, $color, $gradient) !important;
+        background-color: darken($color, 8%);
+        background-image: linear-gradient(
+            $button--gradient-direction,
+            $color,
+            $gradient
+        );
     }
 }
 
 @mixin all-outline-button-pseudos($color) {
-    background-color: transparent !important;
+    background-color: transparent;
     box-shadow: inset 0 0 0 1px $color;
-    color: $color !important;
+    color: $color;
 
     &:focus,
     &:hover {
-        box-shadow: inset 0 0 0 1px darken($color, 4%) !important;
-        color: darken($color, 4%) !important;
+        box-shadow: inset 0 0 0 1px darken($color, 4%);
+        color: darken($color, 4%);
     }
     &:active {
-        box-shadow: inset 0 0 0 1px darken($color, 8%) !important;
-        color: darken($color, 8%) !important;
+        box-shadow: inset 0 0 0 1px darken($color, 8%);
+        color: darken($color, 8%);
     }
 }
 

@@ -3,13 +3,13 @@
 */
 
 .supr-btn {
-    color: $white !important;
-    font-family: inherit !important;
-    font-size: $base-font-size--sm !important;
-    font-weight: $button-font-weight !important;
+    color: $white;
+    font-family: inherit;
+    font-size: $base-font-size--sm;
+    font-weight: $button-font-weight;
     letter-spacing: $button-letter-spacing;
-    text-transform: $button-text-transform !important;
-    border-radius: $button-border-radius !important;
+    text-transform: $button-text-transform;
+    border-radius: $button-border-radius;
     transition: $base-transition;
     text-align: center;
     border: none;
@@ -20,7 +20,7 @@
     &--lg {
         padding: $base-unit--sm $base-unit--xl;
         height: $button-size--lg;
-        font-size: $base-font-size--sm * 1.3333333333 !important;
+        font-size: $base-font-size--sm * 1.3333333333;
     }
 
     &--md {
@@ -31,15 +31,15 @@
     &--sm {
         padding: $base-unit--xxs $base-unit--md;
         height: $button-size--sm;
-        font-size: $base-font-size--sm * 0.75 !important;
-        font-weight: $base-font-weight--regular !important;
+        font-size: $base-font-size--sm * 0.75;
+        font-weight: $base-font-weight--regular;
     }
 
     &--xs {
         padding: $base-unit--xxs $base-unit--sm;
         height: $button-size--xs;
-        font-size: $base-font-size--sm * 0.75 !important;
-        font-weight: $base-font-weight--regular !important;
+        font-size: $base-font-size--sm * 0.75;
+        font-weight: $base-font-weight--regular;
     }
 
     &--square {
@@ -52,19 +52,31 @@
         padding: $base-unit--xxs;
         height: $button-size--xs;
         width: $button-size--xs;
-        border-radius: 100px !important;
+        border-radius: 100px;
     }
 
     &--brand {
-        @include all-button-pseudos($button-color--brand, $button-brand-gradient, $button--gradient-direction);
+        @include all-button-pseudos(
+            $button-color--brand,
+            $button-brand-gradient,
+            $button--gradient-direction
+        );
     }
 
     &--primary {
-        @include all-button-pseudos($button-color--primary, $button-primary-gradient, $button--gradient-direction);
+        @include all-button-pseudos(
+            $button-color--primary,
+            $button-primary-gradient,
+            $button--gradient-direction
+        );
     }
 
     &--secondary {
-        @include all-button-pseudos($button-color--secondary, $button-secondary-gradient, $button--gradient-direction);
+        @include all-button-pseudos(
+            $button-color--secondary,
+            $button-secondary-gradient,
+            $button--gradient-direction
+        );
     }
 
     &--success {
@@ -97,6 +109,6 @@
 
     &:disabled {
         opacity: 0.6;
-        cursor: not-allowed !important;
+        cursor: not-allowed;
     }
 }
