@@ -29,7 +29,7 @@
                 <select
                     name=""
                     id="font-family"
-                    @change="changeBodyFontFamily($event)"
+                    @change="changeHeadlineFontFamily($event)"
                 >
                     <option value="IBM Plex Sans" selected
                         >IBM Plex Sans</option
@@ -173,11 +173,11 @@ export default {
     },
     methods: {
         ...mapActions([
+            "setHeadlineFontFamily",
             "setHeadlineFontColor",
             "setHeadlineIconColor",
             "setHeadlineFontWeight",
-            "setHeadlineTextTransform",
-            "setBodyFontFamily"
+            "setHeadlineTextTransform"
         ]),
         changeHeadlineFontColor(e) {
             const color = e.target.value;
@@ -195,10 +195,9 @@ export default {
             const textTransform = e.target.value;
             this.setHeadlineTextTransform(textTransform);
         },
-        changeBodyFontFamily(e) {
+        changeHeadlineFontFamily(e) {
             const fontFamily = `"${e.target.value}", sans-serif`;
-            console.log(fontFamily);
-            this.setBodyFontFamily(fontFamily);
+            this.setHeadlineFontFamily(fontFamily);
         }
     }
 };

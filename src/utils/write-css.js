@@ -17,10 +17,10 @@ const schema = new mongoose.Schema({
   "text--muted": {
     type: Object,
   },
-  "supr-button--primary": {
+  "supr-btn--primary": {
     type: Object,
   },
-  "supr-button--secondary": {
+  "supr-btn--secondary": {
     type: Object,
   },
   icon: {

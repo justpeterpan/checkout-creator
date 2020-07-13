@@ -32,8 +32,8 @@ npm run lint
 - Headline Text: hex - h1-h6
 - Body text: hex - body
 - Muted text: hex - .text--muted
-- Primary button: hex gradient - .supr-button--primary
-- Secondary button: hex - .supr-button--secondary
+- Primary button: hex gradient - .supr-btn--primary
+- Secondary button: hex - .supr-btn--secondary
 - Link: hex - a
 - Icons: Hex - .icon
 ```

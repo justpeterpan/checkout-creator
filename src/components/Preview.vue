@@ -1,18 +1,16 @@
 <template>
-    <div class="preview">
+    <div class="preview" v-bind:style="body">
         <div class="viewport iphone iphone--light">
             <header>SHOP LOGO</header>
             <img src="../assets/images/yeezy-boost-inside.jpg" alt />
             <main>
-                <!-- 
+                <!--
         TODO: replace with svg
         <h1 v-bind:style="headlineIconColor">Headline Icon Color</h1>
-        {{ headlineIconColor }} 
+        {{ headlineIconColor }}
         -->
-                <h1 class="headline--xl" v-bind:style="headlineFontColor">
-                    Headline
-                </h1>
-                {{ headlineFontColor }}
+                <h1 class="headline--xl" v-bind:style="headline">Headline</h1>
+                {{ headline }}
                 <p>
                     The path of the righteous man is beset on all sides by the
                     iniquities of the selfish and the tyranny of evil men.
@@ -46,6 +44,7 @@
                 {{ bodyFontFamily }}
                 <button
                     class="supr-btn supr-btn--lg supr-btn--primary supr-btn--block"
+                    v-bind:style="suprButtonPrimary"
                 >
                     Primary button
                 </button>
@@ -65,9 +64,11 @@ export default {
     },
     computed: {
         ...mapGetters([
-            "headlineFontColor",
+            "body",
+            "headline",
             "headlineIconColor",
-            "bodyFontFamily"
+            "bodyFontFamily",
+            "suprButtonPrimary"
         ])
     }
 };
