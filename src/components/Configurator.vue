@@ -2,6 +2,8 @@
   <div>
     <h1>Branding Configurator</h1>
     <headlines />
+    <body-section />
+    <buttons-section />
     <save-button :text="`${saveButtonText}`" />
   </div>
 </template>
@@ -9,12 +11,14 @@
 <script>
 import SaveButton from "./SaveButton";
 import Headlines from "./Headlines";
+import BodySection from "./BodySection";
+import ButtonsSection from "./ButtonsSection";
 
 import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Configurator",
-  components: { SaveButton, Headlines },
+  components: { SaveButton, Headlines, BodySection, ButtonsSection },
   data() {
     return {
       storeState: this.$store.state,
@@ -27,8 +31,8 @@ export default {
     ...mapActions(["fetchDataFromApi"]),
   },
   created() {
-    this.fetchDataFromApi();
-  }
+    // this.fetchDataFromApi();
+  },
 };
 </script>
 

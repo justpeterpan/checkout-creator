@@ -12,10 +12,10 @@ export const store = new Vuex.Store({
     config: {
       body: {
         "font-family": "'Montserrat', sans-serif",
-        "background-color": "#000",
         color: "#000",
       },
       headline: {
+        "font-family": "'Montserrat', sans-serif",
         color: "#000",
         "font-weight": "normal",
         "text-transform": "capitalize",
@@ -23,11 +23,13 @@ export const store = new Vuex.Store({
       "text--muted": {
         color: "#000",
       },
-      "supr-button--primary": {
-        color: "#000",
+      "supr-btn--primary": {
+        color: "#fff",
+        "background-color": "#000",
       },
-      "supr-button--secondary": {
+      "supr-btn--secondary": {
         color: "#000",
+        "background-color": "#000",
       },
       icon: {
         fill: "#000",

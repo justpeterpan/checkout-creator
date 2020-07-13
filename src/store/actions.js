@@ -10,6 +10,10 @@ export const setBodyFontColor = ({ commit }, color) => {
   commit("setBodyFontColor", color);
 };
 
+export const setHeadlineFontFamily = ({ commit }, fontFamily) => {
+  commit("setHeadlineFontFamily", fontFamily);
+};
+
 export const setHeadlineFontColor = ({ commit }, color) => {
   commit("setHeadlineFontColor", color);
 };
@@ -34,8 +38,16 @@ export const setSuprButtonPrimaryFontColor = ({ commit }, color) => {
   commit("setSuprButtonPrimaryFontColor", color);
 };
 
+export const setSuprButtonPrimaryBackgroundColor = ({ commit }, color) => {
+  commit("setSuprButtonPrimaryBackgroundColor", color);
+};
+
 export const setSuprButtonSecondaryFontColor = ({ commit }, color) => {
   commit("setSuprButtonSecondaryFontColor", color);
+};
+
+export const setSuprButtonSecondaryBackgroundColor = ({ commit }, color) => {
+  commit("setSuprButtonSecondaryBackgroundColor", color);
 };
 
 export const fetchDataFromApi = ({ commit }) => {

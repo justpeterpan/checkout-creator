@@ -29,17 +29,17 @@ const mapTextMutedProperties = (selector, values) => {
 };
 
 const mapSuprButtonPrimaryProperties = (selector, values) => {
-  if (selector === "supr-button--primary") {
+  if (selector === "supr-btn--primary") {
     const suprButtonPrimaryValues = JSON.stringify(values);
-    const suprButtonPrimary = `.supr-button--primary ${suprButtonPrimaryValues};`;
+    const suprButtonPrimary = `.supr-btn--primary ${suprButtonPrimaryValues};`;
     return (finalCssArray[3] = suprButtonPrimary);
   }
 };
 
 const mapSuprButtonSecondaryProperties = (selector, values) => {
-  if (selector === "supr-button--secondary") {
+  if (selector === "supr-btn--secondary") {
     const suprButtonSecondaryValues = JSON.stringify(values);
-    const suprButtonSecondary = `.supr-button--secondary ${suprButtonSecondaryValues};`;
+    const suprButtonSecondary = `.supr-btns--secondary ${suprButtonSecondaryValues};`;
     return (finalCssArray[4] = suprButtonSecondary);
   }
 };
