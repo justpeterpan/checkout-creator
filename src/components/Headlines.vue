@@ -41,13 +41,27 @@
                         id="font-family"
                         @change="changeHeadlineFontFamily($event)"
                     >
-                        <option value="IBM Plex Sans" selected
+                        <option
+                            value="IBM Plex Sans"
+                            :selected="isIbmPlexFont()"
                             >IBM Plex Sans</option
                         >
-                        <option value="Montserrat">Montserrat</option>
-                        <option value="DIN Next LT Pro">DIN Next LT Pro</option>
-                        <option value="Jost">Jost</option>
-                        <option value="Open Sans">Open Sans</option>
+                        <option
+                            value="Montserrat"
+                            :selected="isMontserratFont()"
+                            >Montserrat</option
+                        >
+                        <option
+                            value="DIN Next LT Pro"
+                            :selected="isDinNextFont()"
+                            >DIN Next LT Pro</option
+                        >
+                        <option value="Jost" :selected="isJostFont()"
+                            >Jost</option
+                        >
+                        <option value="Open Sans" :selected="isOpenSansFont()"
+                            >Open Sans</option
+                        >
                     </select>
                     <span class="select-indicator">
                         <svg
@@ -182,7 +196,8 @@ export default {
             "headlineFontColorValue",
             "headlineFontWeight",
             "headlineTextTransform",
-            "activeSection"
+            "activeSection",
+            "headlineFontFamily"
         ])
     },
     methods: {
@@ -217,6 +232,21 @@ export default {
         changeActiveSection(e) {
             const section = e.target.id;
             this.setActiveSection(section);
+        },
+        isIbmPlexFont() {
+            return this.headlineFontFamily === `"IBM Plex Sans", sans-serif`;
+        },
+        isMontserratFont() {
+            return this.headlineFontFamily === `"Montserrat", sans-serif`;
+        },
+        isDinNextFont() {
+            return this.headlineFontFamily === `"DIN Next LT Pro", sans-serif`;
+        },
+        isJostFont() {
+            return this.headlineFontFamily === `"Jost", sans-serif`;
+        },
+        isOpenSansFont() {
+            return this.headlineFontFamily === `"Open Sans", sans-serif`;
         }
     }
 };

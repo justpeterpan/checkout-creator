@@ -15,13 +15,27 @@
                         id="font-family"
                         @change="changeBodyFontFamily($event)"
                     >
-                        <option value="IBM Plex Sans" selected
+                        <option
+                            value="IBM Plex Sans"
+                            :selected="isIbmPlexFont()"
                             >IBM Plex Sans</option
                         >
-                        <option value="Montserrat">Montserrat</option>
-                        <option value="DIN Next LT Pro">DIN Next LT Pro</option>
-                        <option value="Jost">Jost</option>
-                        <option value="Open Sans">Open Sans</option>
+                        <option
+                            value="Montserrat"
+                            :selected="isMontserratFont()"
+                            >Montserrat</option
+                        >
+                        <option
+                            value="DIN Next LT Pro"
+                            :selected="isDinNextFont()"
+                            >DIN Next LT Pro</option
+                        >
+                        <option value="Jost" :selected="isJostFont()"
+                            >Jost</option
+                        >
+                        <option value="Open Sans" :selected="isOpenSansFont()"
+                            >Open Sans</option
+                        >
                     </select>
                     <span class="select-indicator">
                         <svg
@@ -77,7 +91,12 @@ import { mapActions, mapGetters } from "vuex";
 
 export default {
     computed: {
-        ...mapGetters(["bodyFontColor", "textMutedFontColor", "activeSection"])
+        ...mapGetters([
+            "bodyFontColor",
+            "textMutedFontColor",
+            "activeSection",
+            "bodyFontFamily"
+        ])
     },
     methods: {
         ...mapActions([
@@ -101,6 +120,21 @@ export default {
         changeActiveSection(e) {
             const section = e.target.id;
             this.setActiveSection(section);
+        },
+        isIbmPlexFont() {
+            return this.bodyFontFamily === `"IBM Plex Sans", sans-serif`;
+        },
+        isMontserratFont() {
+            return this.bodyFontFamily === `"Montserrat", sans-serif`;
+        },
+        isDinNextFont() {
+            return this.bodyFontFamily === `"DIN Next LT Pro", sans-serif`;
+        },
+        isJostFont() {
+            return this.bodyFontFamily === `"Jost", sans-serif`;
+        },
+        isOpenSansFont() {
+            return this.bodyFontFamily === `"Open Sans", sans-serif`;
         }
     }
 };

@@ -5,6 +5,7 @@ export const headlineIconColorValue = state => state.config["icon"].fill;
 export const headlineFontWeight = state => state.config.headline["font-weight"];
 export const headlineTextTransform = state =>
     state.config.headline["text-transform"];
+export const headlineFontFamily = state => state.config.headline["font-family"];
 
 export const body = state => state.config.body;
 export const bodyFontFamily = state => state.config.body["font-family"];
