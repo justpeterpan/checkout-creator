@@ -35,7 +35,8 @@ export const store = new Vuex.Store({
                 fill: "#000"
             }
         },
-        saveButtonText: "Save Config"
+        saveButtonText: "Save Config",
+        activeSection: "headline"
     },
     getters,
     mutations,

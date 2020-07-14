@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="headline--xl">Branding Configurator</h1>
+        <h1 class="headline--xl">Configurator</h1>
         <headlines />
         <body-section />
         <buttons-section />
@@ -18,9 +18,11 @@ import { mapActions, mapGetters } from "vuex";
 
 export default {
     name: "Configurator",
+
     components: { SaveButton, Headlines, BodySection, ButtonsSection },
     data() {
         return {
+            activeSection: "",
             storeState: this.$store.state
         };
     },
@@ -37,4 +39,8 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+section h2 {
+    cursor: pointer;
+}
+</style>

@@ -1,6 +1,26 @@
 <template>
     <div class="preview" v-bind:style="body">
-        <div class="viewport iphone iphone--light">
+        <div class="button-group">
+            <h5>Viewport</h5>
+            <button
+                class=""
+                v-bind:class="viewport === 'iPhone' ? 'active' : ''"
+                @click="viewport = 'iPhone'"
+            >
+                iPhone
+            </button>
+            <button
+                class=""
+                v-bind:class="viewport === 'iPad' ? 'active' : ''"
+                @click="viewport = 'iPad'"
+            >
+                iPad
+            </button>
+        </div>
+        <div
+            class="viewport iphone"
+            v-bind:class="viewport === 'iPhone' ? 'iphone' : 'ipad'"
+        >
             <header>SHOP LOGO</header>
             <img src="../assets/images/yeezy-boost-inside.jpg" alt />
             <main>
@@ -59,6 +79,7 @@ import { mapGetters } from "vuex";
 export default {
     data() {
         return {
+            viewport: "iPhone",
             storeState: this.$store.state
         };
     },
@@ -90,14 +111,33 @@ img {
     overflow-y: scroll;
     transition: all 0.3s ease-in-out;
 
+    .button-group {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+
+        button + button {
+            margin-left: 8px;
+        }
+    }
+
     .viewport {
         background-color: #fff;
         overflow-x: hidden;
         overflow-y: scroll;
         scrollbar-width: none;
+        transition: all 0.3s ease-in-out;
 
         &::-webkit-scrollbar {
             display: none;
+        }
+
+        &.iphone {
+            width: 375px;
+            height: 812px;
+            border-radius: 40px;
+            box-shadow: 0 0 0 15px #f0f0f0, 0 0 0 20px #fff,
+                40px 40px 40px 0 rgba(0, 0, 0, 0.3);
         }
 
         &.iphone--dark {
@@ -110,16 +150,12 @@ img {
                 40px 40px 40px 0 rgba(0, 0, 0, 0.3);
         }
 
-        &.iphone {
-            width: 375px;
-            height: 812px;
-            border-radius: 40px;
-        }
-
         &.ipad {
             width: 1024px;
             height: 768px;
             border-radius: 8px;
+            box-shadow: 0 0 0 15px #f0f0f0, 0 0 0 20px #fff,
+                40px 40px 40px 0 rgba(0, 0, 0, 0.3);
         }
 
         &.ipad--light {

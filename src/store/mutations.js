@@ -53,3 +53,7 @@ export const setSuprButtonSecondaryBackgroundColor = (state, color) => {
 export const setDataFromApi = (state, data) => {
     state.config = data;
 };
+
+export const setActiveSection = (state, data) => {
+    state.activeSection = data;
+};

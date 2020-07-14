@@ -29,3 +29,5 @@ export const suprButtonSecondaryBackgroundColor = state =>
 export const stateConfig = state => state.config;
 export const state = state => state;
 export const saveButtonText = state => state.saveButtonText;
+
+export const activeSection = state => state.activeSection;

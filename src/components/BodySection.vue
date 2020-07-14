@@ -1,68 +1,75 @@
 <template>
-    <div>
-        <h2>Body</h2>
-        <form action="" class="form boxed">
-            <!-- FONT FAMILY  -->
-            <div class="input-group">
-                <select
-                    name=""
-                    id="font-family"
-                    @change="changeBodyFontFamily($event)"
-                >
-                    <option value="IBM Plex Sans" selected
-                        >IBM Plex Sans</option
+    <section
+        class="config-section"
+        v-bind:class="activeSection === 'body' ? 'active' : ''"
+    >
+        <h2 id="body" class="headline--lg" @click="changeActiveSection($event)">
+            Body
+        </h2>
+        <div class="section__content" v-if="activeSection === 'body'">
+            <form action="" class="form boxed">
+                <!-- FONT FAMILY  -->
+                <div class="input-group">
+                    <select
+                        name=""
+                        id="font-family"
+                        @change="changeBodyFontFamily($event)"
                     >
-                    <option value="Montserrat">Montserrat</option>
-                    <option value="DIN Next LT Pro">DIN Next LT Pro</option>
-                    <option value="Jost">Jost</option>
-                    <option value="Open Sans">Open Sans</option>
-                </select>
-                <span class="select-indicator">
-                    <svg
-                        width="10"
-                        height="10"
-                        version="1.1"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <g transform="scale(0.833333)">
-                            <path
-                                fill="none"
-                                stroke="#000"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="1"
-                                d="M0.541,5.627l11.125,12.573l-2.2212e-08,-2.51095e-08c0.182964,0.206831 0.498954,0.226179 0.705785,0.043215c0.0152727,-0.0135103 0.0297047,-0.0279423 0.043215,-0.043215l11.126,-12.573"
-                            ></path>
-                        </g>
-                    </svg>
-                </span>
-                <label for="font-family">font family</label>
-            </div>
+                        <option value="IBM Plex Sans" selected
+                            >IBM Plex Sans</option
+                        >
+                        <option value="Montserrat">Montserrat</option>
+                        <option value="DIN Next LT Pro">DIN Next LT Pro</option>
+                        <option value="Jost">Jost</option>
+                        <option value="Open Sans">Open Sans</option>
+                    </select>
+                    <span class="select-indicator">
+                        <svg
+                            width="10"
+                            height="10"
+                            version="1.1"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g transform="scale(0.833333)">
+                                <path
+                                    fill="none"
+                                    stroke="#000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1"
+                                    d="M0.541,5.627l11.125,12.573l-2.2212e-08,-2.51095e-08c0.182964,0.206831 0.498954,0.226179 0.705785,0.043215c0.0152727,-0.0135103 0.0297047,-0.0279423 0.043215,-0.043215l11.126,-12.573"
+                                ></path>
+                            </g>
+                        </svg>
+                    </span>
+                    <label for="font-family">font family</label>
+                </div>
 
-            <!-- FONT COLOR -->
-            <div class="input-group">
-                <input
-                    type="color"
-                    id="font-color"
-                    :value="bodyFontColor"
-                    @change="changeBodyFontColor($event)"
-                />
-                <label for="font-color">Font Color</label>
-            </div>
+                <!-- FONT COLOR -->
+                <div class="input-group">
+                    <input
+                        type="color"
+                        id="font-color"
+                        :value="bodyFontColor"
+                        @change="changeBodyFontColor($event)"
+                    />
+                    <label for="font-color">Font Color</label>
+                </div>
 
-            <!-- MUTED FONT COLOR -->
-            <div class="input-group">
-                <input
-                    type="color"
-                    id="muted-font-color"
-                    :value="textMutedFontColor"
-                    @change="changeBodyMutedFontColor($event)"
-                />
-                <label for="muted-font-color">Text Muted Color</label>
-            </div>
-        </form>
-    </div>
+                <!-- MUTED FONT COLOR -->
+                <div class="input-group">
+                    <input
+                        type="color"
+                        id="muted-font-color"
+                        :value="textMutedFontColor"
+                        @change="changeBodyMutedFontColor($event)"
+                    />
+                    <label for="muted-font-color">Text Muted Color</label>
+                </div>
+            </form>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -70,13 +77,14 @@ import { mapActions, mapGetters } from "vuex";
 
 export default {
     computed: {
-        ...mapGetters(["bodyFontColor", "textMutedFontColor"])
+        ...mapGetters(["bodyFontColor", "textMutedFontColor", "activeSection"])
     },
     methods: {
         ...mapActions([
             "setBodyFontFamily",
             "setBodyFontColor",
-            "setTextMutedFontColor"
+            "setTextMutedFontColor",
+            "setActiveSection"
         ]),
         changeBodyFontFamily(e) {
             const fontFamily = `"${e.target.value}", sans-serif`;
@@ -89,6 +97,10 @@ export default {
         changeBodyMutedFontColor(e) {
             const color = e.target.value;
             this.setTextMutedFontColor(color);
+        },
+        changeActiveSection(e) {
+            const section = e.target.id;
+            this.setActiveSection(section);
         }
     }
 };

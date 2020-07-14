@@ -43,7 +43,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 320px 1fr;
 }
 
 .aside {
