@@ -1,32 +1,32 @@
 <template>
     <div class="preview" v-bind:style="body">
-        <div class="button-group">
-            <h5>Viewport</h5>
-            <button
-                class=""
-                v-bind:class="viewport === 'iPhone' ? 'active' : ''"
-                @click="viewport = 'iPhone'"
+        <Tabs>
+            <div class="button-group">
+                <h5>Viewport</h5>
+                <button
+                    class=""
+                    v-bind:class="viewport === 'iPhone' ? 'active' : ''"
+                    @click="viewport = 'iPhone'"
+                >
+                    iPhone
+                </button>
+                <button
+                    class=""
+                    v-bind:class="viewport === 'iPad' ? 'active' : ''"
+                    @click="viewport = 'iPad'"
+                >
+                    iPad
+                </button>
+            </div>
+            <div
+                class="viewport iphone"
+                v-bind:class="viewport === 'iPhone' ? 'iphone' : 'ipad'"
             >
-                iPhone
-            </button>
-            <button
-                class=""
-                v-bind:class="viewport === 'iPad' ? 'active' : ''"
-                @click="viewport = 'iPad'"
-            >
-                iPad
-            </button>
-        </div>
-        <div
-            class="viewport iphone"
-            v-bind:class="viewport === 'iPhone' ? 'iphone' : 'ipad'"
-        >
-            <Tabs>
                 <Tab name="Landing Page" selected="true"><Landing /></Tab>
                 <Tab name="Checkout Page"><Checkout /></Tab>
                 <Tab name="Success Page"><Success /></Tab>
-            </Tabs>
-        </div>
+            </div>
+        </Tabs>
     </div>
 </template>
 
@@ -55,5 +55,24 @@ export default {
 <style scoped lang="scss">
 img {
     max-width: 100%;
+}
+.tab-buttons {
+    overflow: hidden;
+    position: fixed;
+    top: 30px;
+}
+
+ul {
+    display: flex;
+    padding: 0;
+    list-style: none;
+
+    .tab-button {
+        margin-right: 10px;
+
+        &.is-active {
+            background-color: blue;
+        }
+    }
 }
 </style>
