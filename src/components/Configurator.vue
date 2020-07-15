@@ -39,8 +39,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-section h2 {
-    cursor: pointer;
-}
-</style>
+<style scoped lang="scss"></style>

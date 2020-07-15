@@ -231,7 +231,7 @@ form {
     margin: 0;
 
     fieldset {
-        border: 1px solid $text-color--muted;
+        border: 1px solid rgba(0, 0, 0, 0.1);
         padding: 8px;
 
         legend {

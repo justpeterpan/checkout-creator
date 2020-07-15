@@ -3,15 +3,41 @@
         class="config-section"
         v-bind:class="activeSection === 'buttons' ? 'active' : ''"
     >
-        <h2
+        <div
             id="buttons"
-            class="headline--lg"
+            class="config-section__header"
             @click="changeActiveSection($event)"
         >
-            Buttons
-        </h2>
+            <h2 class="headline--lg">
+                Buttons
+            </h2>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-circle-plus"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="var(--action-color)"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path stroke="none" d="M0 0h24v24H0z" />
+                <circle cx="12" cy="12" r="9" />
+                <line x1="9" y1="12" x2="15" y2="12" />
+                <line
+                    v-if="activeSection !== 'buttons'"
+                    x1="12"
+                    y1="9"
+                    x2="12"
+                    y2="15"
+                />
+            </svg>
+        </div>
+
         <!-- TODO split into 1 component and configure via props -->
-        <div class="section__content" v-if="activeSection === 'buttons'">
+        <div class="config-section__content" v-if="activeSection === 'buttons'">
             <form action="" class="form boxed">
                 <div>
                     <h3 class="headline--md">Primary Button</h3>
