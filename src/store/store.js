@@ -25,11 +25,12 @@ export const store = new Vuex.Store({
             },
             "supr-btn--primary": {
                 color: "#fff",
-                "background-color": "#000"
+                "background-color": "#000",
             },
             "supr-btn--secondary": {
                 color: "#000",
-                "background-color": "#000"
+                "background-color": "#000",
+                "box-shadow": "none",
             },
             icon: {
                 fill: "#000"

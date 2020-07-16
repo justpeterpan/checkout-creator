@@ -61,18 +61,4 @@ img {
     position: fixed;
     top: 30px;
 }
-
-ul {
-    display: flex;
-    padding: 0;
-    list-style: none;
-
-    .tab-button {
-        margin-right: 10px;
-
-        &.is-active {
-            background-color: blue;
-        }
-    }
-}
 </style>

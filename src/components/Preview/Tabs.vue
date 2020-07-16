@@ -4,7 +4,7 @@
             <ul>
                 <li v-for="(tab, index) in tabs" :key="index">
                     <button
-                        class="tab-button"
+                        class="tab-button supr-btn supr-btn--xs supr-btn--block"
                         :class="{ 'is-active': tab.isActive }"
                         @click="selectTab(tab)"
                     >
@@ -52,10 +52,12 @@ ul {
     list-style: none;
 
     .tab-button {
-        margin-right: 10px;
+        margin-right: 60px;
+        background-color: grey;
+        width: auto !important;
 
         &.is-active {
-            background-color: blue;
+            background-color: #2983fb;
         }
     }
 }

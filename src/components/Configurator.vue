@@ -1,25 +1,25 @@
 <template>
     <div>
         <h1 class="headline--xl">Configurator</h1>
-        <headlines />
+        <headline-section />
         <body-section />
-        <buttons-section />
+        <button-section />
         <save-button :text="`${saveButtonText}`" />
     </div>
 </template>
 
 <script>
 import SaveButton from "./SaveButton";
-import Headlines from "./Headlines";
+import HeadlineSection from "./HeadlineSection";
 import BodySection from "./BodySection";
-import ButtonsSection from "./ButtonsSection";
+import ButtonSection from "./ButtonSection";
 
 import { mapActions, mapGetters } from "vuex";
 
 export default {
     name: "Configurator",
 
-    components: { SaveButton, Headlines, BodySection, ButtonsSection },
+    components: { SaveButton, HeadlineSection, BodySection, ButtonSection },
     data() {
         return {
             activeSection: "",
