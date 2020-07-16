@@ -5,6 +5,12 @@
         <body-section />
         <button-section />
         <save-button :text="`${saveButtonText}`" />
+        <button
+            class="supr-btn supr-btn--primary supr-btn--md supr-btn--block"
+            @click="resetConfig"
+        >
+            Reset Config
+        </button>
     </div>
 </template>
 
@@ -30,7 +36,16 @@ export default {
         ...mapGetters(["saveButtonText"])
     },
     methods: {
-        ...mapActions(["fetchDataFromApi"])
+        ...mapActions(["fetchDataFromApi"]),
+        resetConfig() {
+            this.$http
+                .post(
+                    "https://sandbox.supr.com/api/checkout-config",
+                    {},
+                    { emulateJSON: true }
+                )
+                .then(res => console.log(res));
+        }
     },
     created() {
         this.fetchDataFromApi();
