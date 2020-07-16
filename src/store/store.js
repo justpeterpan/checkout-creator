@@ -25,19 +25,20 @@ export const store = new Vuex.Store({
             },
             "supr-btn--primary": {
                 color: "#fff",
-                "background-color": "#000",
+                "background-color": "#000"
             },
             "supr-btn--secondary": {
                 color: "#000",
                 "background-color": "#000",
-                "box-shadow": "none",
+                "box-shadow": "none"
             },
             icon: {
                 fill: "#000"
             }
         },
         saveButtonText: "Save Config",
-        activeSection: "headline"
+        activeSection: "headline",
+        activeTab: "landing"
     },
     getters,
     mutations,

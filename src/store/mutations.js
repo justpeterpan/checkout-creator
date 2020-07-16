@@ -54,6 +54,10 @@ export const setDataFromApi = (state, data) => {
     state.config = data;
 };
 
-export const setActiveSection = (state, data) => {
-    state.activeSection = data;
+export const setActiveSection = (state, section) => {
+    state.activeSection = section;
+};
+
+export const setActiveTab = (state, tab) => {
+    state.activeTab = tab;
 };

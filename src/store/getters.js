@@ -26,10 +26,12 @@ export const suprButtonSecondaryFontColor = state =>
     state.config["supr-btn--secondary"].color;
 export const suprButtonSecondaryBackgroundColor = state =>
     state.config["supr-btn--secondary"]["background-color"];
-export const suprButtonSecondaryBoxShadow = state => state.config["supr-btn-secondary"]["box-shadow"]
+export const suprButtonSecondaryBoxShadow = state =>
+    state.config["supr-btn-secondary"]["box-shadow"];
 
 export const stateConfig = state => state.config;
 export const state = state => state;
 export const saveButtonText = state => state.saveButtonText;
 
 export const activeSection = state => state.activeSection;
+export const activeTab = state => state.activeTab;

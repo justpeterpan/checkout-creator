@@ -63,3 +63,7 @@ export const fetchDataFromApi = ({ commit }) => {
 export const setActiveSection = ({ commit }, section) => {
     commit("setActiveSection", section);
 };
+
+export const setActiveTab = ({ commit }, tab) => {
+    commit("setActiveTab", tab);
+};

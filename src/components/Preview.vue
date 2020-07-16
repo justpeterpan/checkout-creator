@@ -1,45 +1,66 @@
 <template>
     <div class="preview" v-bind:style="body">
-        <Tabs>
-            <div class="button-group">
-                <h5>Viewport</h5>
+        <div class="button-group">
+            <h5>Page</h5>
+            <div class="tab-group">
                 <button
-                    class=""
-                    v-bind:class="viewport === 'iPhone' ? 'active' : ''"
-                    @click="viewport = 'iPhone'"
+                    class="tab-button supr-btn supr-btn--sm supr-btn--block"
+                    :class="{ 'is-active': activeTab === 'landing' }"
+                    @click="changeActiveTab('landing')"
                 >
-                    iPhone
+                    Landing
                 </button>
                 <button
-                    class=""
-                    v-bind:class="viewport === 'iPad' ? 'active' : ''"
-                    @click="viewport = 'iPad'"
+                    class="tab-button supr-btn supr-btn--sm supr-btn--block"
+                    :class="{ 'is-active': activeTab === 'checkout' }"
+                    @click="changeActiveTab('checkout')"
                 >
-                    iPad
+                    Checkout
+                </button>
+                <button
+                    class="tab-button supr-btn supr-btn--sm supr-btn--block"
+                    :class="{ 'is-active': activeTab === 'success' }"
+                    @click="changeActiveTab('success')"
+                >
+                    Success
                 </button>
             </div>
-            <div
-                class="viewport iphone"
-                v-bind:class="viewport === 'iPhone' ? 'iphone' : 'ipad'"
+            <h5>Viewport</h5>
+            <button
+                class=""
+                v-bind:class="viewport === 'iPhone' ? 'active' : ''"
+                @click="viewport = 'iPhone'"
             >
-                <Tab name="Landing Page" selected="true"><Landing /></Tab>
-                <Tab name="Checkout Page"><Checkout /></Tab>
-                <Tab name="Success Page"><Success /></Tab>
-            </div>
-        </Tabs>
+                iPhone
+            </button>
+            <button
+                class=""
+                v-bind:class="viewport === 'iPad' ? 'active' : ''"
+                @click="viewport = 'iPad'"
+            >
+                iPad
+            </button>
+        </div>
+
+        <div
+            class="viewport iphone"
+            v-bind:class="viewport === 'iPhone' ? 'iphone' : 'ipad'"
+        >
+            <Landing v-show="activeTab === 'landing'" />
+            <Checkout v-show="activeTab === 'checkout'" />
+            <Success v-show="activeTab === 'success'" />
+        </div>
     </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import Tab from "./Preview/Tab";
-import Tabs from "./Preview/Tabs";
+import { mapGetters, mapActions } from "vuex";
 import Landing from "./Preview/Landing";
 import Checkout from "./Preview/Checkout";
 import Success from "./Preview/Success";
 
 export default {
-    components: { Tab, Tabs, Landing, Checkout, Success },
+    components: { Landing, Checkout, Success },
     data() {
         return {
             viewport: "iPhone",
@@ -47,7 +68,13 @@ export default {
         };
     },
     computed: {
-        ...mapGetters(["body"])
+        ...mapGetters(["body", "activeTab"])
+    },
+    methods: {
+        ...mapActions(["setActiveTab"]),
+        changeActiveTab(tabName) {
+            this.setActiveTab(tabName);
+        }
     }
 };
 </script>
@@ -56,9 +83,13 @@ export default {
 img {
     max-width: 100%;
 }
-.tab-buttons {
-    overflow: hidden;
-    position: fixed;
-    top: 30px;
+.tab-group {
+    display: flex;
+}
+.tab-button {
+    background-color: gray !important;
+    &.is-active {
+        background-color: #2983fb !important;
+    }
 }
 </style>
