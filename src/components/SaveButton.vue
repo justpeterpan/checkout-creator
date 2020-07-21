@@ -1,7 +1,7 @@
 <template>
     <div>
         <button
-            class="supr-btn supr-btn--primary supr-btn--md supr-btn--block"
+            class="supr-btn supr-btn--success supr-btn--md supr-btn--block"
             @click="submitConfig"
         >
             {{ text }}

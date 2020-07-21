@@ -1,27 +1,38 @@
 // LAYOUT
 
 // PAGE LAYOUT
+.aside {
+    background-color: #fff;
+    padding         : 24px;
+    height          : 100vh;
+    overflow-y      : scroll;
+    font-size       : 12px;
+
+    &>*+* {
+        margin: 24px 0 0 0;
+    }
+}
 
 .config-section {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    box-shadow   : 0 0 0 1px rgba(0, 0, 0, 0.1);
     border-radius: $base-border-radius;
-    padding: 24px;
-    transition: $base-transition;
+    padding      : 24px;
+    transition   : $base-transition;
 
     &__header {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
+        cursor         : pointer;
+        display        : flex;
+        align-items    : center;
         justify-content: space-between;
 
         h2 {
-            margin: 0;
-            user-select: none;
+            margin        : 0;
+            user-select   : none;
             pointer-events: none;
         }
 
         svg {
-            user-select: none;
+            user-select   : none;
             pointer-events: none;
         }
     }
@@ -33,41 +44,42 @@
 }
 
 .preview {
-    display: flex;
+    display       : flex;
     flex-direction: column;
-    place-items: center;
-    place-content: center;
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    transition: all 0.3s ease-in-out;
+    place-items   : center;
+    place-content : center;
+    position      : relative;
+    overflow-x    : hidden;
+    overflow-y    : scroll;
+    transition    : all 0.3s ease-in-out;
 
     .button-group {
         position: absolute;
-        top: 24px;
-        right: 24px;
+        top     : 24px;
+        right   : 24px;
 
-        button + button {
+        button+button {
             margin-left: 8px;
         }
     }
 
     .viewport {
         background-color: #fff;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        transition: all 0.3s ease-in-out;
+        overflow-x      : hidden;
+        overflow-y      : scroll;
+        scrollbar-width : none;
+        transition      : all 0.3s ease-in-out;
 
         &::-webkit-scrollbar {
             display: none;
         }
 
         &.iphone {
-            width: 375px;
-            height: 812px;
+            width        : 375px;
+            height       : 812px;
             border-radius: 40px;
-            box-shadow: 0 0 0 15px #f0f0f0, 0 0 0 20px #fff,
+            box-shadow   : 0 0 0 15px #111,
+                0 0 0 20px #333,
                 40px 40px 40px 0 rgba(0, 0, 0, 0.3);
         }
 
@@ -82,28 +94,23 @@
         }
 
         &.ipad {
-            width: 1024px;
-            height: 768px;
+            width        : 1024px;
+            height       : 768px;
             border-radius: 8px;
-            box-shadow: 0 0 0 15px #f0f0f0, 0 0 0 20px #fff,
-                40px 40px 40px 0 rgba(0, 0, 0, 0.3);
-        }
-
-        &.ipad--light {
-            box-shadow: 0 0 0 15px #f0f0f0, 0 0 0 20px #fff,
+            box-shadow   : 0 0 0 30px #111, 0 0 0 40px #333,
                 40px 40px 40px 0 rgba(0, 0, 0, 0.3);
         }
 
         header {
-            width: 100%;
+            width           : 100%;
             background-color: rgba(255, 255, 255, 0.9);
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            place-items: center;
-            place-content: center;
-            position: sticky;
-            top: 0;
+            padding         : 16px;
+            display         : flex;
+            flex-direction  : column;
+            place-items     : center;
+            place-content   : center;
+            position        : sticky;
+            top             : 0;
         }
 
         main {

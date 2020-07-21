@@ -46,18 +46,6 @@ body {
     grid-template-columns: 320px 1fr;
 }
 
-.aside {
-    background-color: #fff;
-    padding: 24px 48px;
-    height: 100vh;
-    overflow-y: scroll;
-    font-size: 12px;
-
-    & > * + * {
-        margin: 24px 0 0 0;
-    }
-}
-
 .main {
     background-color: whitesmoke;
     // margin-top: calc((812px - (812px / 1.618)) - 130px);

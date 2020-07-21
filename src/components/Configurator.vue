@@ -6,7 +6,7 @@
         <button-section />
         <save-button :text="`${saveButtonText}`" />
         <button
-            class="supr-btn supr-btn--primary supr-btn--md supr-btn--block"
+            class="supr-btn supr-btn--danger supr-btn--md supr-btn--block"
             @click="resetConfig"
         >
             Reset Config
