@@ -20,7 +20,7 @@ import HeadlineSection from "./HeadlineSection";
 import BodySection from "./BodySection";
 import ButtonSection from "./ButtonSection";
 
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
     name: "Configurator",
@@ -33,7 +33,7 @@ export default {
         };
     },
     computed: {
-        ...mapGetters(["saveButtonText"])
+        ...mapState(["saveButtonText"])
     },
     methods: {
         ...mapActions(["fetchDataFromApi"]),

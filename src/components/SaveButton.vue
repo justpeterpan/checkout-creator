@@ -14,11 +14,6 @@ import { mapGetters } from "vuex";
 
 export default {
     props: ["text"],
-    data() {
-        return {
-            config: {}
-        };
-    },
     mounted() {
         if (this.state) {
             this.config = this.state;

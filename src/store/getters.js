@@ -1,37 +1,9 @@
-export const headline = state => state.config.headline;
-export const headlineFontColorValue = state => state.config.headline.color;
-export const headlineIconColor = state => state.config["icon"];
-export const headlineIconColorValue = state => state.config["icon"].fill;
-export const headlineFontWeight = state => state.config.headline["font-weight"];
-export const headlineTextTransform = state =>
-    state.config.headline["text-transform"];
-export const headlineFontFamily = state => state.config.headline["font-family"];
-
-export const body = state => state.config.body;
-export const bodyFontFamily = state => state.config.body["font-family"];
-export const bodyFontBackgroundColor = state =>
-    state.config.body["background-color"];
-export const bodyFontColor = state => state.config.body.color;
-
-export const textMutedFontColor = state => state.config["text--muted"];
-
-export const suprButtonPrimary = state => state.config["supr-btn--primary"];
-export const suprButtonPrimaryFontColor = state =>
-    state.config["supr-btn--primary"].color;
-export const suprButtonPrimaryBackgroundColor = state =>
-    state.config["supr-btn--primary"]["background-color"];
-
-export const suprButtonSecondary = state => state.config["supr-btn--secondary"];
-export const suprButtonSecondaryFontColor = state =>
-    state.config["supr-btn--secondary"].color;
-export const suprButtonSecondaryBackgroundColor = state =>
-    state.config["supr-btn--secondary"]["background-color"];
-export const suprButtonSecondaryBoxShadow = state =>
-    state.config["supr-btn-secondary"]["box-shadow"];
-
-export const stateConfig = state => state.config;
 export const state = state => state;
-export const saveButtonText = state => state.saveButtonText;
 
-export const activeSection = state => state.activeSection;
-export const activeTab = state => state.activeTab;
+// export const borderRadiusValue = state => {
+//     const radius = state.config["supr-btn"]["border-radius"].replace(
+//         /[^\d.-]/g,
+//         ""
+//     );
+//     return Number(state.config["supr-btn"]["border-radius"]);
+// };

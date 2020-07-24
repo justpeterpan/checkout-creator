@@ -46,7 +46,7 @@
                     <input
                         type="color"
                         id="icon-color"
-                        :value="headlineIconColorValue"
+                        :value="config.icon.fill"
                         @change="changeHeadlineIconColor($event)"
                     />
                     <label for="icon-color">Icon Color</label>
@@ -57,7 +57,7 @@
                     <input
                         type="color"
                         id="font-color"
-                        :value="headlineFontColorValue"
+                        :value="config.headline.color"
                         @change="changeHeadlineFontColor($event)"
                     />
                     <label for="font-color">Font Color</label>
@@ -72,23 +72,25 @@
                     >
                         <option
                             value="IBM Plex Sans"
-                            :selected="isIbmPlexFont()"
+                            :selected="isFont('headline', ibmPlex)"
                             >IBM Plex Sans</option
                         >
                         <option
                             value="Montserrat"
-                            :selected="isMontserratFont()"
+                            :selected="isFont('headline', montserrat)"
                             >Montserrat</option
                         >
                         <option
                             value="DIN Next LT Pro"
-                            :selected="isDinNextFont()"
+                            :selected="isFont('headline', dinNext)"
                             >DIN Next LT Pro</option
                         >
-                        <option value="Jost" :selected="isJostFont()"
+                        <option value="Jost" :selected="isFont('headline', jost)"
                             >Jost</option
                         >
-                        <option value="Open Sans" :selected="isOpenSansFont()"
+                        <option
+                            value="Open Sans"
+                            :selected="isFont('headline', openSans)"
                             >Open Sans</option
                         >
                     </select>
@@ -126,7 +128,9 @@
                                 name="headline-font-weight"
                                 id="font-weight-light"
                                 @change="changeHeadlineFontWeight($event)"
-                                :checked="headlineFontWeight === 'lighter'"
+                                :checked="
+                                    config.headline['font-weight'] === 'lighter'
+                                "
                             />
                             <span class="control__indicator"></span>
                             light
@@ -140,7 +144,9 @@
                                 name="headline-font-weight"
                                 id="font-weight-normal"
                                 @change="changeHeadlineFontWeight($event)"
-                                :checked="headlineFontWeight === 'normal'"
+                                :checked="
+                                    config.headline['font-weight'] === 'normal'
+                                "
                             />
                             <span class="control__indicator"></span>
                             normal
@@ -154,7 +160,9 @@
                                 name="headline-font-weight"
                                 id="font-weight-bold"
                                 @change="changeHeadlineFontWeight($event)"
-                                :checked="headlineFontWeight === 'bold'"
+                                :checked="
+                                    config.headline['font-weight'] === 'bold'
+                                "
                             />
                             <span class="control__indicator"></span>
                             bold
@@ -173,7 +181,10 @@
                                 name="headline-case"
                                 id="text-transform-upppercase"
                                 @change="changeHeadlineTextTransform($event)"
-                                :checked="headlineTextTransform === 'uppercase'"
+                                :checked="
+                                    config.headline['text-transform'] ===
+                                        'uppercase'
+                                "
                             />
                             <span class="control__indicator"></span>
                             uppercase
@@ -188,7 +199,8 @@
                                 id="text-transform-capitalize"
                                 @change="changeHeadlineTextTransform($event)"
                                 :checked="
-                                    headlineTextTransform === 'capitalize'
+                                    config.headline['text-transform'] ===
+                                        'capitalize'
                                 "
                             />
                             <span class="control__indicator"></span>
@@ -203,7 +215,10 @@
                                 name="headline-case"
                                 id="text-transform-lowercase"
                                 @change="changeHeadlineTextTransform($event)"
-                                :checked="headlineTextTransform === 'lowercase'"
+                                :checked="
+                                    config.headline['text-transform'] ===
+                                        'lowercase'
+                                "
                             />
                             <span class="control__indicator"></span>
                             lowercase
@@ -216,18 +231,20 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
+    data() {
+        return {
+            ibmPlex: `"IBM Plex Sans", sans-serif`,
+            montserrat: `"Montserrat", sans-serif`,
+            dinNext: `"DIN Next LT Pro", sans-serif`,
+            jost: `"Jost", sans-serif`,
+            openSans: `"Open Sans", sans-serif`
+        };
+    },
     computed: {
-        ...mapGetters([
-            "headlineIconColorValue",
-            "headlineFontColorValue",
-            "headlineFontWeight",
-            "headlineTextTransform",
-            "activeSection",
-            "headlineFontFamily"
-        ])
+        ...mapState(["config", "activeSection"])
     },
     methods: {
         ...mapActions([
@@ -262,20 +279,8 @@ export default {
             const section = e.target.id;
             this.setActiveSection(section);
         },
-        isIbmPlexFont() {
-            return this.headlineFontFamily === `"IBM Plex Sans", sans-serif`;
-        },
-        isMontserratFont() {
-            return this.headlineFontFamily === `"Montserrat", sans-serif`;
-        },
-        isDinNextFont() {
-            return this.headlineFontFamily === `"DIN Next LT Pro", sans-serif`;
-        },
-        isJostFont() {
-            return this.headlineFontFamily === `"Jost", sans-serif`;
-        },
-        isOpenSansFont() {
-            return this.headlineFontFamily === `"Open Sans", sans-serif`;
+        isFont(section, font) {
+            return this.config[section]["font-family"] == font;
         }
     }
 };

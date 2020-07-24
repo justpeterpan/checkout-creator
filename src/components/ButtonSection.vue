@@ -40,13 +40,26 @@
         <div class="config-section__content" v-if="activeSection === 'buttons'">
             <form action="" class="form boxed">
                 <div>
+                    <div class="input-group">
+                        <input
+                            type="number"
+                            min="0"
+                            name="border radius"
+                            id="btn-border-radius"
+                            :value="getBorderRadiusValue"
+                            @change="changeSuprButtonoBorderRadius($event)"
+                        />
+                        <label for="btn-border-radius">Border Radius</label>
+                    </div>
+                </div>
+                <div>
                     <h3 class="headline--md">Primary Button</h3>
                     <!-- ICON COLOR -->
                     <div class="input-group">
                         <input
                             type="color"
                             id="font-color"
-                            :value="suprButtonPrimaryFontColor"
+                            :value="config['supr-btn--primary'].color"
                             @change="changePrimaryButtonFontColor($event)"
                         />
                         <label for="font-color">Font Color</label>
@@ -57,7 +70,9 @@
                         <input
                             type="color"
                             id="bg-color"
-                            :value="suprButtonPrimaryBackgroundColor"
+                            :value="
+                                config['supr-btn--primary']['background-color']
+                            "
                             @change="changePrimaryButtonBackgroundColor($event)"
                         />
                         <label for="bg-color">Background Color</label>
@@ -72,7 +87,7 @@
                         <input
                             type="color"
                             id="font-color"
-                            :value="suprButtonSecondaryFontColor"
+                            :value="config['supr-btn--secondary'].color"
                             @change="changeSecondaryButtonFontColor($event)"
                         />
                         <label for="font-color">Font Color</label>
@@ -83,7 +98,11 @@
                         <input
                             type="color"
                             id="bg-color"
-                            :value="suprButtonSecondaryBackgroundColor"
+                            :value="
+                                config['supr-btn--secondary'][
+                                    'background-color'
+                                ]
+                            "
                             @change="
                                 changeSecondaryButtonBackgronudColor($event)
                             "
@@ -97,18 +116,18 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapState, mapGetters } from "vuex";
 
 export default {
     computed: {
-        ...mapGetters([
-            "suprButtonPrimary",
-            "suprButtonPrimaryFontColor",
-            "suprButtonPrimaryBackgroundColor",
-            "suprButtonSecondaryFontColor",
-            "suprButtonSecondaryBackgroundColor",
-            "activeSection"
-        ])
+        ...mapState(["config", "activeSection"]),
+        ...mapGetters(["borderRadiusValue"]),
+        getBorderRadiusValue() {
+            return this.config["supr-btn"]["border-radius"].replace(
+                /[^\d.-]/g,
+                ""
+            );
+        }
     },
     methods: {
         ...mapActions([
@@ -116,7 +135,8 @@ export default {
             "setSuprButtonPrimaryBackgroundColor",
             "setSuprButtonSecondaryFontColor",
             "setSuprButtonSecondaryBackgroundColor",
-            "setActiveSection"
+            "setActiveSection",
+            "setSuprButtonBorderRadius"
         ]),
         changePrimaryButtonFontColor(e) {
             const color = e.target.value;
@@ -137,6 +157,10 @@ export default {
         changeActiveSection(e) {
             const section = e.target.id;
             this.setActiveSection(section);
+        },
+        changeSuprButtonoBorderRadius(e) {
+            const radius = `${e.target.value}px`;
+            this.setSuprButtonBorderRadius(radius);
         }
     }
 };

@@ -6,10 +6,12 @@
             <!--
         TODO: replace with svg
         <h1 v-bind:style="headlineIconColor">Headline Icon Color</h1>
-        {{ headlineIconColor }}
+        {{ config.icon.fill }}
         -->
-            <h1 class="headline--xl" v-bind:style="headline">Headline</h1>
-            {{ headline }}
+            <h1 class="headline--xl" v-bind:style="config.headline">
+                Headline
+            </h1>
+            {{ config.headline }}
             <p>
                 The path of the righteous man is beset on all sides by the
                 iniquities of the selfish and the tyranny of evil men. Blessed
@@ -40,10 +42,10 @@
                 but it wasn't. Nature is lethal but it doesn't hold a candle to
                 man.
             </p>
-            {{ bodyFontFamily }}
+            {{ config.body["font-family"] }}
             <button
                 class="supr-btn supr-btn--lg supr-btn--primary supr-btn--block"
-                v-bind:style="suprButtonPrimary"
+                v-bind:style="config[('supr-btn--primary', 'supr-btn')]"
             >
                 Primary button
             </button>
@@ -52,16 +54,11 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapState } from "vuex";
 
 export default {
     computed: {
-        ...mapGetters([
-            "headline",
-            "headlineIconColor",
-            "bodyFontFamily",
-            "suprButtonPrimary"
-        ])
+        ...mapState(["config"])
     }
 };
 </script>

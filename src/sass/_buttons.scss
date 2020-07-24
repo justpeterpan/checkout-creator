@@ -64,11 +64,7 @@
     }
 
     &--primary {
-        @include all-button-pseudos(
-            $button-color--primary,
-            $button-primary-gradient,
-            $button--gradient-direction
-        );
+        @include all-button-pseudos($button-color--primary, none, none);
     }
 
     &--secondary {

@@ -12,28 +12,31 @@ export const store = new Vuex.Store({
         config: {
             body: {
                 "font-family": "'Montserrat', sans-serif",
-                color: "#000"
+                color: "#000000"
             },
             headline: {
                 "font-family": "'Montserrat', sans-serif",
-                color: "#000",
+                color: "#000000",
                 "font-weight": "normal",
                 "text-transform": "capitalize"
             },
             "text--muted": {
-                color: "#000"
+                color: "#000000"
+            },
+            "supr-btn": {
+                "border-radius": "4px"
             },
             "supr-btn--primary": {
-                color: "#fff",
+                color: "#ffffff",
                 "background-color": "#000"
             },
             "supr-btn--secondary": {
-                color: "#000",
-                "background-color": "#000",
+                color: "#000000",
+                "background-color": "#000000",
                 "box-shadow": "none"
             },
             icon: {
-                fill: "#000"
+                fill: "#000000"
             }
         },
         saveButtonText: "Save Config",

@@ -46,23 +46,25 @@
                     >
                         <option
                             value="IBM Plex Sans"
-                            :selected="isIbmPlexFont()"
+                            :selected="isFont('body', ibmPlex)"
                             >IBM Plex Sans</option
                         >
                         <option
                             value="Montserrat"
-                            :selected="isMontserratFont()"
+                            :selected="isFont('body', montserrat)"
                             >Montserrat</option
                         >
                         <option
                             value="DIN Next LT Pro"
-                            :selected="isDinNextFont()"
+                            :selected="isFont('body', dinNext)"
                             >DIN Next LT Pro</option
                         >
-                        <option value="Jost" :selected="isJostFont()"
+                        <option value="Jost" :selected="isFont('body', jost)"
                             >Jost</option
                         >
-                        <option value="Open Sans" :selected="isOpenSansFont()"
+                        <option
+                            value="Open Sans"
+                            :selected="isFont('body', openSans)"
                             >Open Sans</option
                         >
                     </select>
@@ -94,7 +96,7 @@
                     <input
                         type="color"
                         id="font-color"
-                        :value="bodyFontColor"
+                        :value="config.body.color"
                         @change="changeBodyFontColor($event)"
                     />
                     <label for="font-color">Font Color</label>
@@ -105,7 +107,7 @@
                     <input
                         type="color"
                         id="muted-font-color"
-                        :value="textMutedFontColor"
+                        :value="config['text--muted'].color"
                         @change="changeBodyMutedFontColor($event)"
                     />
                     <label for="muted-font-color">Text Muted Color</label>
@@ -116,16 +118,20 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
+    data() {
+        return {
+            ibmPlex: `"IBM Plex Sans", sans-serif`,
+            montserrat: `"Montserrat", sans-serif`,
+            dinNext: `"DIN Next LT Pro", sans-serif`,
+            jost: `"Jost", sans-serif`,
+            openSans: `"Open Sans", sans-serif`
+        };
+    },
     computed: {
-        ...mapGetters([
-            "bodyFontColor",
-            "textMutedFontColor",
-            "activeSection",
-            "bodyFontFamily"
-        ])
+        ...mapState(["config", "activeSection"])
     },
     methods: {
         ...mapActions([
@@ -150,20 +156,8 @@ export default {
             const section = e.target.id;
             this.setActiveSection(section);
         },
-        isIbmPlexFont() {
-            return this.bodyFontFamily === `"IBM Plex Sans", sans-serif`;
-        },
-        isMontserratFont() {
-            return this.bodyFontFamily === `"Montserrat", sans-serif`;
-        },
-        isDinNextFont() {
-            return this.bodyFontFamily === `"DIN Next LT Pro", sans-serif`;
-        },
-        isJostFont() {
-            return this.bodyFontFamily === `"Jost", sans-serif`;
-        },
-        isOpenSansFont() {
-            return this.bodyFontFamily === `"Open Sans", sans-serif`;
+        isFont(section, font) {
+            return this.config[section]["font-family"] == font;
         }
     }
 };

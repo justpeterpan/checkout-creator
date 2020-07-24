@@ -1,5 +1,5 @@
 <template>
-    <div class="preview" v-bind:style="body">
+    <div class="preview" v-bind:style="config.body">
         <div class="button-group">
             <h5>Page</h5>
             <div class="tab-group">
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 import Landing from "./Preview/Landing";
 import Checkout from "./Preview/Checkout";
 import Success from "./Preview/Success";
@@ -68,7 +68,7 @@ export default {
         };
     },
     computed: {
-        ...mapGetters(["body", "activeTab"])
+        ...mapState(["config", "activeTab"])
     },
     methods: {
         ...mapActions(["setActiveTab"]),

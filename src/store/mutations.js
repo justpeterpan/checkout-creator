@@ -34,6 +34,10 @@ export const setTextMutedFontColor = (state, color) => {
     state.config["text--muted"].color = color;
 };
 
+export const setSuprButtonBorderRadius = (state, radius) => {
+    state.config["supr-btn"]["border-radius"] = radius;
+};
+
 export const setSuprButtonPrimaryFontColor = (state, color) => {
     state.config["supr-btn--primary"].color = color;
 };

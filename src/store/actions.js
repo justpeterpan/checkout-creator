@@ -34,6 +34,10 @@ export const setTextMutedFontColor = ({ commit }, color) => {
     commit("setTextMutedFontColor", color);
 };
 
+export const setSuprButtonBorderRadius = ({ commit }, radius) => {
+    commit("setSuprButtonBorderRadius", radius);
+};
+
 export const setSuprButtonPrimaryFontColor = ({ commit }, color) => {
     commit("setSuprButtonPrimaryFontColor", color);
 };
