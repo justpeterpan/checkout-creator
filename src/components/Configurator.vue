@@ -1,9 +1,11 @@
 <template>
     <div>
         <h1 class="headline--xl">Configurator</h1>
-        <headline-section />
-        <body-section />
-        <button-section />
+        <div>
+            <headline-section />
+            <body-section />
+            <button-section />
+        </div>
         <save-button :text="`${saveButtonText}`" />
         <button
             class="supr-btn supr-btn--danger supr-btn--md supr-btn--block"
@@ -48,7 +50,7 @@ export default {
         }
     },
     created() {
-        this.fetchDataFromApi();
+        // this.fetchDataFromApi();
         console.log("STORESTATE:", this.storeState);
     }
 };

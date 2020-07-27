@@ -14,16 +14,19 @@
 }
 
 .config-section {
-    box-shadow   : 0 0 0 1px rgba(0, 0, 0, 0.1);
-    border-radius: $base-border-radius;
-    padding      : 24px;
-    transition   : $base-transition;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow : 0 1px 0 0 rgba(0, 0, 0, 0.1);
+
+    &:first-of-type {
+        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+    }
 
     &__header {
         cursor         : pointer;
         display        : flex;
         align-items    : center;
         justify-content: space-between;
+        height         : 64px;
 
         h2 {
             margin        : 0;
@@ -39,6 +42,7 @@
 
     &__content {
         margin-top: 16px;
+        padding   : 0 0 24px;
         transition: $base-transition;
     }
 }
@@ -114,7 +118,7 @@
         }
 
         main {
-            padding: 16px 48px;
+            padding: 16px 24px;
         }
     }
 }
