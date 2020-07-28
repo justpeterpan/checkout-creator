@@ -45,7 +45,7 @@
             {{ config.body["font-family"] }}
             <button
                 class="supr-btn supr-btn--lg supr-btn--primary supr-btn--block"
-                v-bind:style="config[('supr-btn--primary', 'supr-btn')]"
+                v-bind:style="[config['supr-btn--primary'], config['supr-btn']]"
             >
                 Primary button
             </button>
