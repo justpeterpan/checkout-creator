@@ -50,7 +50,7 @@ export default {
         }
     },
     created() {
-        // this.fetchDataFromApi();
+        this.fetchDataFromApi();
         console.log("STORESTATE:", this.storeState);
     }
 };
